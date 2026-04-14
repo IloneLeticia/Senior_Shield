@@ -1,61 +1,41 @@
 # Introdução
 
 ## Problema
-> Nesse momento você deve apresentar o problema que a sua aplicação deve
-> resolver. No entanto, não é a hora de comentar sobre a aplicação.
-> Descreva também o contexto em que essa aplicação será usada, se
-> houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de
-> fato existir, pois ainda não é a hora de apresentar requisitos
-> detalhados ou projetos.
->
-> Nesse momento, o grupo pode optar por fazer uso
-> de ferramentas como Design Thinking, que permite um olhar de ponta a
-> ponta para o problema.
->
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+>De acordo com a pesquisa feita no estado de São Paulo pela Fundação Seade (março/2026), cerca de 68% dos idosos se sentem vulneráveis a golpes online, esse dado é superior à média geral da pesquisa. Nesse contexto, é importante ressaltar a importância da busca pela segurança dos idosos, especialmente em um cenário de crescente digitalização de serviços financeiros, comunicação e acesso à informação.
+>O problema dos golpes digitais direcionados a idosos está relacionado a uma combinação de fatores, como a menor familiaridade com tecnologias digitais, dificuldades na identificação de fraudes e a atuação cada vez mais elaborada de criminosos virtuais. Golpes como falsos contatos de familiares, comunicações fraudulentas em nome de instituições financeiras e links maliciosos são frequentemente utilizados para explorar a confiança e o senso de urgência desse público.
+>Além disso, o uso de informações muito técnicas acabam se tornando inacessíveis para o idoso identificar e reagir a essas situações. Em diversos casos, os idosos se sentem constrangidos em relatar o ocorrido e acabam demorando em buscar ajuda.
+>Esse problema ocorre em um contexto amplo, envolvendo o uso cotidiano de tecnologias como smartphones, aplicativos de mensagens, redes sociais e serviços bancários digitais.
+>A ausência de orientação adequada e de suporte imediato em momentos críticos evidencia a falta de segurança digital e como é comunicada e operacionalizada para esse público específico.
+
+
+
+
+
+
+
 
 ## Objetivos
 
-> Aqui você deve descrever os objetivos do trabalho indicando que o
-> objetivo geral é desenvolver um software para solucionar o problema
-> apresentado acima. Apresente também alguns (pelo menos 2) objetivos
-> específicos dependendo de onde você vai querer concentrar a sua
-> prática investigativa, ou como você vai aprofundar no seu trabalho.
-> 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+>O objetivo do projeto é desenvolver um software capaz de solucionar o problema citado acima. Nossa ideia é promover informações que sejam acessíveis para o usuário, de forma a mantê-los informados sobre como funcionam os golpes digitais, qual é a solução inicial para se precaver, caso seja uma vítima, informar quais passos devem ser seguidos. 
+
+
+
+
+
 
 ## Justificativa
 
-> Descreva a importância ou a motivação para trabalhar com esta aplicação
-> que você escolheu. Indique as razões pelas quais você escolheu seus
-> objetivos específicos ou as razões para aprofundar em certos aspectos
-> do software.
-> 
-> O grupo de trabalho pode fazer uso de questionários, entrevistas e
-> dados estatísticos, que podem ser apresentados, com o objetivo de
-> esclarecer detalhes do problema que será abordado pelo grupo.
->
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+ >A importância do aplicativo se justifica pelo crescimento significativo dos golpes digitais, alinhados com o  aumento da inclusão digital de idosos. Com a popularização de smartphones, aplicativos bancários e até mesmo as redes sociais, os idosos passaram a utilizar mais a tecnologia no dia a dia, e muitas das vezes sem o suporte necessário para lidar com os riscos virtuais. 
+>Logo, é relevante o desenvolvimento de uma solução que priorize a acessibilidade da informação, utilizando linguagem simples e orientações práticas. A escolha de focar na conscientização e orientação imediata se deve à necessidade de fornecer ao usuário autonomia e segurança no ambiente digital.
+
+
+
+
+
 
 ## Público-Alvo
+>O público-alvo da aplicação são idosos que utilizam tecnologias digitais no seu cotidiano, como smartphones, aplicativos de mensagens (ex: WhatsApp), redes sociais e serviços bancários online.
 
-> Descreva quem serão as pessoas que usarão a sua aplicação indicando os
-> diferentes perfis. O objetivo aqui não é definir quem serão os
-> clientes ou quais serão os papéis dos usuários na aplicação. A ideia
-> é, dentro do possível, conhecer um pouco mais sobre o perfil dos
-> usuários: conhecimentos prévios, relação com a tecnologia, relações
-> hierárquicas, etc.
->
-> Adicione informações sobre o público-alvo por meio de uma descrição
-> textual, ou diagramas de personas, mapa de stakeholders, ou como o
-> grupo achar mais conveniente.
-> 
-> **Links Úteis**:
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
- 
+>Em geral, estamos focando em usuários que possuem conhecimento básico ou intermediário em tecnologia, e que utilizam dispositivos principalmente para comunicação e acesso a serviços essenciais. No entanto, possuem dificuldades na identificação de fraudes digitais. 
+
+
