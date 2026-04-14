@@ -23,5 +23,5 @@
 > que fazem parte da solução. Discorra sobre o diagrama.
 
 A imagem a seguir ilustra a o fluxo do usuário em nossa solução. Assim
-que o usuário entra na plataforma, ele é apresentado à tela inicial. por ser um site voltado a idosos, optamos por não fazer ela de login.
-
+que o usuário entra na plataforma, ele é apresentado à tela inicial. por ser um site voltado a idosos, optamos por não fazer ela de login. então, ele pode optar por ler as iformações clicando no botão destascado, ou usar o assistente virtual(que sera feito sem o uso de ia, sera um banco de perguntas e respostas ja pré definidos)
+![alt text](<images/Wireframe Flowchart Whiteboard in Purple Violet Adjacent Colour Blocks Style.png>)
