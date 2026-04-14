@@ -3,6 +3,4 @@
 > Inclua todas as referências (livros, artigos, sites, etc) utilizados
 > no desenvolvimento do trabalho.
 > 
-> **Links Úteis**:
-> - [Formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
-> - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
+>https://www.agenciasp.sp.gov.br/pesquisa-do-seade-mostra-que-mais-de-80-dos-idosos-sofreram-tentativas-de-golpes-virtuais-em-sp/
