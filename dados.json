@@ -1,65 +1,43 @@
 {
-  "golpes": [
+  "golpes_catalogados": [
     {
       "id": "loja",
       "titulo": "Desconfio de loja falsa",
-      "sinais": [
-        "Preço muito abaixo do normal",
-        "Site sem CNPJ",
-        "Sem avaliações confiáveis"
-      ],
-      "acoes": [
-        "Não finalizar a compra",
-        "Pesquisar o nome da loja",
-        "Verificar reputação"
-      ],
+      "sinais": ["Preço muito abaixo do normal", "Site sem CNPJ", "Sem avaliações confiáveis"],
+      "acoes": ["Não finalizar a compra", "Pesquisar o nome da loja", "Verificar reputação"],
       "link": "https://www.reclameaqui.com.br/"
     },
     {
       "id": "namorado_suspeito",
       "titulo": "Golpe do parceiro virtual",
-      "sinais": [
-        "As fotos sempre tem uma qualidade de imagem muito boa",
-        "Não aceita ir em videochamadas",
-        "Pede mimos como dinheiro, presentes, etc.",
-        "Não tem nenhuma rede social"
-      ],
-      "acoes": [
-        "Pedir para mandar mensagens de voz",
-        "Fazer uma chamada de vídeo para confirmar",
-        "Baixe uma imagem da pessoa e utilize o link abaixo para verificar"
-      ],
+      "sinais": ["As fotos sempre tem uma qualidade de imagem muito boa", "Não aceita ir em videochamadas", "Pede mimos como dinheiro, presentes, etc.", "Não tem nenhuma rede social"],
+      "acoes": ["Pedir para mandar mensagens de voz", "Fazer uma chamada de vídeo para confirmar", "Baixe uma imagem da pessoa e utilize o link abaixo para verificar"],
       "link": "https://www.zerogpt.com/pt/ai-image-detector"
     },
     {
       "id": "banco_bloqueado",
       "titulo": "Golpe do banco bloqueado",
-      "sinais": [
-        "Mensagem no WhatsApp de um número sem sinal de verificado",
-        "Ligação pedindo informações pessoais para desbloquear a conta",
-        "Pedido de dinheiro para desbloquear a conta"
-      ],
-      "acoes": [
-        "Ligar para o canal oficial do banco",
-        "Nunca transferir dinheiro sem ligar para o número oficial do seu banco",
-        "Em caso do pedido ser por boleto Pix, verifique o boleto pelo link abaixo:"
-      ],
+      "sinais": ["Mensagem no WhatsApp de um número sem sinal de verificado", "Ligação pedindo informações pessoais para desbloquear a conta", "Pedido de dinheiro para desbloquear a conta"],
+      "acoes": ["Ligar para o canal oficial do banco", "Nunca transferir dinheiro sem ligar para o número oficial do seu banco", "Em caso do pedido ser por boleto Pix, verifique o boleto pelo link abaixo:"],
       "link": "https://www.serasa.com.br/limpa-nome-online/validador-boletos/"
     },
     {
       "id": "whatsapp",
       "titulo": "Golpe do novo número",
-      "sinais": [
-        "Parente pedindo dinheiro urgente",
-        "Foto de perfil conhecida, mas número estranho",
-        "Pressão emocional para depósito rápido"
-      ],
-      "acoes": [
-        "Ligar para o número antigo do parente",
-        "Fazer uma chamada de vídeo para confirmar",
-        "Nunca transferir dinheiro sem falar por voz"
-      ],
+      "sinais": ["Parente pedindo dinheiro urgente", "Foto de perfil conhecida, mas número estranho", "Pressão emocional para depósito rápido"],
+      "acoes": ["Ligar para o número antigo do parente", "Fazer uma chamada de vídeo para confirmar", "Nunca transferir dinheiro sem falar por voz"],
       "link": "https://web.whatsapp.com/"
     }
-  ]
+  ],
+  "formulario_relato_usuario": {
+    "descricao": "Área para o idoso cadastrar um novo golpe que identificou",
+    "campos_input": [
+      { "id": "user_titulo", "label": "Qual o nome do golpe?", "tipo": "text" },
+      { "id": "user_sinais", "label": "Quais sinais você percebeu? (Separe por vírgula)", "tipo": "text" },
+      { "id": "user_descricao", "label": "Conte o que aconteceu", "tipo": "textarea" },
+      { "id": "user_data", "label": "Quando aconteceu?", "tipo": "date" }
+    ],
+    "botao_salvar": "Enviar para análise do Netinho"
+  },
+  "historico_relatos": []
 }
