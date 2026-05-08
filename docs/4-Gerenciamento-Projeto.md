@@ -16,7 +16,7 @@
 - _Scrum master_: AlunaY
 - Desenvolvedor _front-end_: AlunoX
 - Desenvolvedor _back-end_: AlunoK
-- Testes: AlunaZ
+- Testes: AlunaZ d
 
 ## Quadro de tarefas
 
