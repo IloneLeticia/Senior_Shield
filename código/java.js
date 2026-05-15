@@ -60,7 +60,13 @@ fetch('dados.json')
 
     document.getElementById(`fim_pagina`).innerHTML=`${descricao[0].descrição_secundária}`
 
-  })
+
+
+  }
+
+
+
+)
   .catch(error => console.error('Erro ao carregar o JSON:', error));
   
 
