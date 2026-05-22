@@ -69,9 +69,93 @@
         "fonte 2 link"
       ]
     }
+  },
+"niveis": [
+  {
+    "id": "baixo",
+    "minSim": 0,
+    "maxSim": 2,
+    "titulo": "Baixo Risco",
+    "mensagem": "Você demonstra bom conhecimento sobre golpes digitais! Continue desconfiando de situações suspeitas e mantenha seus dados protegidos.",
+    "orientacao": "Mesmo estando seguro, converse com familiares sobre os riscos de golpes digitais. A prevenção é sempre o melhor caminho."
+  },
+  {
+    "id": "medio",
+    "minSim": 3,
+    "maxSim": 5,
+    "titulo": "Médio Risco",
+    "mensagem": "Atenção! Você pode ter sido exposto a tentativas de golpe. É importante revisar suas ações recentes e reforçar sua segurança.",
+    "orientacao": "Recomendamos conversar com um familiar de confiança sobre as situações que você respondeu 'Sim'. Se suspeitar de fraude, ligue para sua agência bancária ou para o Procon (151)."
+  },
+  {
+    "id": "alto",
+    "minSim": 6,
+    "maxSim": 8,
+    "titulo": "Alto Risco",
+    "mensagem": "Cuidado! Você apresenta vários sinais de exposição a golpes digitais. Tome medidas imediatas para proteger seus dados e seu dinheiro.",
+    "orientacao": "Procure imediatamente um familiar de confiança. Se acredita ter sido vítima de golpe, ligue para o seu banco (número no verso do cartão), Boletim de Ocorrência pelo 190 ou Delegacia de Crimes Cibernéticos."
   }
-}
+],
 
+"dicas": [
+  {
+    "id": "1",
+    "categoria": "Ligação Suspeita",
+    "perguntaId": "1",
+    "titulo": "Cuidado com ligações do banco",
+    "dica": "Bancos NUNCA pedem senha por telefone. Desligue e ligue de volta pelo número oficial do seu cartão."
+  },
+  {
+    "id": "2",
+    "categoria": "Golpe Financeiro",
+    "perguntaId": "2",
+    "titulo": "Desconfie de transferências urgentes",
+    "dica": "Nenhum benefício ou prêmio legítimo exige Pix ou transferência antecipada. Sempre confirme com alguém de confiança antes de qualquer pagamento."
+  },
+  {
+    "id": "3",
+    "categoria": "Golpe Familiar",
+    "perguntaId": "3",
+    "titulo": "Verifique antes de enviar dinheiro",
+    "dica": "Ao receber mensagens de 'familiar em perigo', ligue diretamente para essa pessoa antes de qualquer ação. Golpistas criam urgência para você não pensar."
+  },
+  {
+    "id": "4",
+    "categoria": "Acesso Remoto",
+    "perguntaId": "4",
+    "titulo": "Nunca instale apps por pedido de terceiros",
+    "dica": "Aplicativos de acesso remoto permitem que golpistas controlem seu celular. Delete imediatamente e troque as senhas do banco."
+  },
+  {
+    "id": "5",
+    "categoria": "Golpe de Prêmio",
+    "perguntaId": "5",
+    "titulo": "Prêmio que cobra taxa é golpe",
+    "dica": "Promoções legítimas nunca cobram taxas antecipadas para liberar prêmios. Ignore e bloqueie o contato."
+  },
+  {
+    "id": "6",
+    "categoria": "Roubo de Dados",
+    "perguntaId": "6",
+    "titulo": "Proteja seus dados pessoais",
+    "dica": "Nunca forneça CPF, RG ou data de nascimento para quem entrou em contato com você. Empresas sérias não solicitam dados assim."
+  },
+  {
+    "id": "7",
+    "categoria": "Phishing",
+    "perguntaId": "7",
+    "titulo": "Não clique em links suspeitos",
+    "dica": "O INSS e bancos nunca enviam links por WhatsApp ou SMS para atualizar dados. Delete a mensagem e bloqueie o número."
+  },
+  {
+    "id": "8",
+    "categoria": "Golpe Romântico",
+    "perguntaId": "8",
+    "titulo": "Desconfie de pedidos financeiros online",
+    "dica": "Pessoas que pedem dinheiro logo após se conhecerem pela internet quase sempre são golpistas. Nunca transfira valores para desconhecidos."
+  }
+]
+}
 
 
 
