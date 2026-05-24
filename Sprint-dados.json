@@ -154,8 +154,43 @@
     "titulo": "Desconfie de pedidos financeiros online",
     "dica": "Pessoas que pedem dinheiro logo após se conhecerem pela internet quase sempre são golpistas. Nunca transfira valores para desconhecidos."
   }
+],
+"netinho": [
+  {
+  "id_pergunta": "1",
+  "pergunta": "Você já recebeu uma ligação de alguém se passando por um funcionário do banco, pedindo informações pessoais ou senha?"
+},
+{
+  "id_pergunta": "2",
+  "pergunta": "Você já recebeu mensagens ou ligações urgentes solicitando que você faça um Pix ou transferência para receber um prêmio ou benefício?"
+},
+{
+  "id_pergunta": "3",
+  "pergunta": "Você já recebeu mensagens de WhatsApp ou SMS dizendo que um familiar está em perigo e pedindo dinheiro urgentemente?"
+},
+{
+  "id_pergunta": "4",
+  "pergunta": "Alguém já pediu para você instalar um aplicativo de acesso remoto no seu celular, alegando que é necessário para resolver um problema?"
+},
+{
+  "id_pergunta": "5",
+  "pergunta": "Você já recebeu mensagens oferecendo prêmios ou benefícios, mas exigindo o pagamento de uma taxa antecipada para liberar o prêmio?"
+},
+{
+  "id_pergunta": "6",
+  "pergunta": "Alguém já solicitou seus dados pessoais, como CPF, RG ou data de nascimento, por telefone ou mensagem, sem que você tenha iniciado o contato?"
+},
+{
+  "id_pergunta": "7",
+  "pergunta": "Você já recebeu mensagens com links suspeitos, alegando ser do INSS, banco ou outra instituição, pedindo para atualizar seus dados?"
+},
+{
+  "id_pergunta": "8",
+  "pergunta": "Você já conheceu alguém pela internet que começou a pedir dinheiro logo após se conhecerem, sem nunca ter se encontrado pessoalmente?"
+}
 ]
 }
+
 
 
 
