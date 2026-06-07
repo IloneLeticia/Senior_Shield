@@ -1,54 +1,314 @@
 {
   "categorias": [
     { "id": "fraudesDeConsumo", "nome": "fraude de consumo.  " },
-    { "id": "falsidadeIdeologica", "nome": "falsidade ideologica.  " },
+    { "id": "golpeDoAmor", "nome": "golpe do amor/parceiro virtual. " },
     { "id": "falsaAutoridade", "nome": "autoridade falsa.  " },
-    { "id": "tutoriais", "nome": "tutoriais.  " },
-    { "id": "saudeEBemEstar", "nome": "Saúde e bem estar.  " }
+    { "id": "tutoriais", "nome": "tutoriais e mais informações.  " },
+    { "id": "RouboDeDados", "nome": "Roubo de dados.  " }
   ],
   "videosPorCategoria": {
     "fraudesDeConsumo": [
-      { "id": 1, "url": "https://www.youtube.com/embed/dQw4w9WgXcQ", "titulo": "O Golpe da Loja Virtual Falsa" },
-      { "id": 2, "url": "https://www.youtube.com/embed/9bZkp7q19f0", "titulo": "Como Identificar um Site Seguro" },
-      { "id": 3, "url": "https://www.youtube.com/embed/LXb3EKWsInQ", "titulo": "Cuidado com Promoções Absurdas" },
-      { "id": 4, "url": "https://www.youtube.com/embed/3JZ_D3ELwOQ", "titulo": "Ciladas no Black Friday" }
+      {
+        "id": 1,
+        "url": "https://www.youtube.com/embed/nO_DYYva6Os",
+        "titulo": "Golpe: cliente paga mas não recebe os produtos",
+        "criador": {
+          "nome": "GCMAIS",
+          "canal": "https://www.youtube.com/@GCMAIS"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 2,
+        "url": "https://www.youtube.com/embed/oCAAe5HcGVY",
+        "titulo": "Como se previnir de uma loja falsa",
+        "criador": {
+          "nome": "Não me Engane!",
+          "canal": "https://www.youtube.com/@N%C3%A3omeEngane"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 3,
+        "url": "https://www.youtube.com/embed/9cVZTt4ChRE",
+        "titulo": "golpe da falsa compra",
+        "criador": {
+          "nome": "Não Caia Na Roubada",
+          "canal": "https://www.youtube.com/@N%C3%A3oCaiaNaRoubada"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 4,
+        "url": "https://www.youtube.com/embed/7GwfuifS88s",
+        "titulo": "Golpe da falsa venda lidera ranking de fraudes digitais no Brasil | Cidade Alerta DF",
+        "criador": {
+          "nome": "Record Brasilia",
+          "canal": "https://www.youtube.com/@recbsb"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      }
     ],
-    "falsidadeIdeologica": [
-      { "id": 5, "url": "https://www.youtube.com/embed/V-_O7nl0Ii0", "titulo": "Perfil Clonado no WhatsApp" },
-      { "id": 6, "url": "https://www.youtube.com/embed/kJQP7kiw5Fk", "titulo": "Falso Parente Pedindo Dinheiro" },
-      { "id": 7, "url": "https://www.youtube.com/embed/l482T0yNkeo", "titulo": "Golpe do Aniversário" },
-      { "id": 8, "url": "https://www.youtube.com/embed/Ke90Tje7VS0", "titulo": "Como Proteger Seu Aplicativo" }
+    "golpeDoAmor": [
+      {
+        "id": 5,
+        "url": "https://www.youtube.com/embed/7hxKwX6LR2g",
+        "titulo": "mulher manda dinheiro para namorado virtual e depois descobre que ele era falso",
+        "criador": {
+          "nome": "Domingo Espetacular",
+          "canal": "https://www.youtube.com/@domingoespetacular"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 6,
+        "url": "https://www.youtube.com/embed/lx6yMJbyXfw",
+        "titulo": "golpe do amor, o que é?",
+        "criador": {
+          "nome": "Domingo Espetacular",
+          "canal": "https://www.youtube.com/@domingoespetacular"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 7,
+        "url": "https://www.youtube.com/embed/a0NMyV6hHAE",
+        "titulo": "golpe das novinhas: criminosos criam perfis falsos para enganar vitmas",
+        "criador": {
+          "nome": "RecordTV Minas",
+          "canal": "https://www.youtube.com/@recordtvminas"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 8,
+        "url": "https://www.youtube.com/embed/OFG4f6JmdE8",
+        "titulo": "Golpista usa ia (inteligencia artificial) para enganar vitima",
+        "criador": {
+          "nome": "SBT News",
+          "canal": "https://www.youtube.com/@SBTNews"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      }
     ],
     "falsaAutoridade": [
-      { "id": 9, "url": "https://www.youtube.com/embed/7thgA8-U654", "titulo": "O Golpe do Falso Funcionário do Banco" },
-      { "id": 10, "url": "https://www.youtube.com/embed/z976ynwIdmE", "titulo": "Falsa Ligação da Central de Segurança" },
-      { "id": 11, "url": "https://www.youtube.com/embed/gfU_m9Kvj3A", "titulo": "Ameaças de Bloqueio de Conta" },
-      { "id": 12, "url": "https://www.youtube.com/embed/09R8_2nJtjg", "titulo": "Como Validar Contatos Oficiais" }
+      {
+        "id": 9,
+        "url": "https://www.youtube.com/embed/lvSJVkyAr7g",
+        "titulo": "Se liga no golpe: INSS alerta que não liga para beneficiários para agendar prova de vida",
+        "criador": {
+          "nome": "Rádio BandNews FM",
+          "canal": "https://www.youtube.com/@RadioBandNewsFM"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 10,
+        "url": "https://www.youtube.com/embed/qHklt2O6CWo",
+        "titulo": "Falsa Ligação da Central de Segurança",
+        "criador": {
+          "nome": "Seus Direitos",
+          "canal": "https://www.youtube.com/@SeusDireitos"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 11,
+        "url": "https://www.youtube.com/embed/_Nit1fsTeAA",
+        "titulo": "Entenda como funciona o golpe da falsa central de atendimento",
+        "criador": {
+          "nome": "Ric RECORD Paraná",
+          "canal": "https://www.youtube.com/@ricrecordpr"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 12,
+        "url": "https://www.youtube.com/embed/rijEjiqMI6k",
+        "titulo": "Golpistas usam IA para cometer crimes",
+        "criador": {
+          "nome": "Band Jornalismo",
+          "canal": "https://www.youtube.com/@bandjornalismo"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      }
     ],
     "tutoriais": [
-      { "id": 13, "url": "https://www.youtube.com/embed/tgbNymZ7vqY", "titulo": "Configurando a Autenticação em Duas Etapas" },
-      { "id": 14, "url": "https://www.youtube.com/embed/C0DPdy98e4c", "titulo": "Como Usar o Cartão Virtual no Celular" },
-      { "id": 15, "url": "https://www.youtube.com/embed/YykjpeuMNEk", "titulo": "Entendendo Extratos e Transações Suspeitas" },
-      { "id": 16, "url": "https://www.youtube.com/embed/exJm9C_7640", "titulo": "O Que Fazer Se For Clonado" }
+      {
+        "id": 13,
+        "url": "https://www.youtube.com/embed/3MIcxh5MLAI",
+        "titulo": "ROUBO DE DADOS na internet: Como Evitar?",
+        "criador": {
+          "nome": "Starti",
+          "canal": "https://www.youtube.com/@StartiOficial"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 14,
+           "url": "https://www.youtube.com/embed/9kyGdB2YYO0",
+        "titulo": "identifique lojas falsas",
+        "criador": {
+          "nome": "Guga Figueiredo",
+          "canal": "https://www.youtube.com/@gugafigueiredo"
+        },
+        "linksUsados": [
+  "https://lens.google/intl/pt-BR",
+  "https://www.siteconfiavel.com.br"
+]
+      },
+      {
+        "id": 15,
+        "url": "https://www.youtube.com/embed/BnWTIWgJ6Z4",
+        "titulo": "o golpe da falsa autoridade: como se proteger?",
+        "criador": {
+          "nome": "Segurança Legal",
+          "canal": "https://www.youtube.com/@Seguran%C3%A7aLegal"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 16,
+        "url": "https://www.youtube.com/embed/EjdlDHrQYLw",
+        "titulo": "O Que Fazer Se For Clonado",
+        "criador": {
+          "nome": "Topmais",
+          "canal": "https://www.youtube.com/@Topmais"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 17,
+        "url": "https://www.youtube.com/embed/RpCmAzo6WsY",
+        "titulo": "GOLPE DO AMOR - O QUE É E COMO EVITAR?",
+        "criador": {
+          "nome": "TV Câmara São José dos Campos",
+          "canal": "https://www.youtube.com/@tvcamarasjc"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 18,
+        "url": "https://www.youtube.com/embed/4LkibED1Mk8",
+        "titulo": "Os Golpes Digitais: Por Que Caímos Tanto Em Mentiras Online",
+        "criador": {
+          "nome": "Julia Leivas",
+          "canal": "https://www.youtube.com/@historiasdejulia"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 19,
+        "url": "https://www.youtube.com/embed/LYtI56d68C8",
+        "titulo": "Saiba como criminosos têm usado a inteligência artificial para aplicar golpes",
+        "criador": {
+          "nome": "Domingo Espetacular",
+          "canal": "https://www.youtube.com/@domingoespetacular"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 20,
+        "url": "https://www.youtube.com/embed/SPrs5uQxUJA",
+        "titulo": "EXPLICANDO GOLPES DA INTERNET EM 2026 ",
+        "criador": {
+          "nome": "Rentne",
+          "canal": "https://www.youtube.com/@rentne"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      }
     ],
-    "saudeEBemEstar": [
-      { "id": 17, "url": "https://www.youtube.com/embed/6stlCkMVGDU", "titulo": "Cuidado com Remédios Milagrosos Oline" },
-      { "id": 18, "url": "https://www.youtube.com/embed/W6NZfCO5SIk", "titulo": "Falsos Planos de Saúde" },
-      { "id": 19, "url": "https://www.youtube.com/embed/lTRiuFIWV54", "titulo": "Como Checar Informações Médicas" },
-      { "id": 20, "url": "https://www.youtube.com/embed/tPEE9ZwTmy0", "titulo": "Evitando Golpes de Consultas Falsas" }
+    "RouboDeDados": [
+      {
+        "id": 21,
+        "url": "https://www.youtube.com/embed/DZXmpbr13a0",
+        "titulo": "Roubo de dados: Como os bandidos sabem tanto sobre você",
+        "criador": {
+          "nome": "UOL",
+          "canal": "https://www.youtube.com/@uol"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 22,
+        "url": "https://www.youtube.com/embed/LzuU_GYju2A?si=91Pdtx5ML_9HuVQ_",
+        "titulo": "Caí no Golpe: Criminosos enviam vírus disfarçado de documentos para roubar dados pelo WhatsApp",
+        "criador": {
+          "nome": "Fala Brasil",
+          "canal": "https://www.youtube.com/@FalaBrasil"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 23,
+        "url": "https://www.youtube.com/embed/ciV5bJmJhzk?si=U9TZfmntfYSVavzf",
+        "titulo": "CRIMINOSOS ROUBAM DADOS BANCÁRIOS DE IDOSOS ",
+        "criador": {
+          "nome": "Brsil Urgente",
+          "canal": "https://www.youtube.com/@BrasilUrgente"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      },
+      {
+        "id": 24,
+        "url": "https://www.youtube.com/embed/d0NPh7Vsc9E?si=f_r2mkMC3T4k_SoU",
+        "titulo": "Caí no Golpe: Criminosos se passam por agentes do INSS para roubar dados e dinheiro de beneficiários",
+        "criador": {
+          "nome": "Fala Brasil",
+          "canal": "https://www.youtube.com/@FalaBrasil"
+        },
+        "linksUsados": [
+          "-"
+        ]
+      }
     ]
   },
   "videoSelecionado": {
     "id": "atual",
-    "videoGrande": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "titulo": "Como evitar golpes na internet de forma simples",
-    "criador": {
-      "nome": "Canal Web Seguro",
-      "canal": "https://www.youtube.com/c/WebSeguroExemplo"
-    },
-    "fontesRelevantes": [
-      { "id": 1, "link": "https://www.gov.br/governodigital" },
-      { "id": 2, "link": "https://www.procon.org.br" }
-    ]
+    "videoGrande": "https://www.youtube.com/embed/dQw4w9WgXcQ"
   }
 }

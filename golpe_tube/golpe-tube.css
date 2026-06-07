@@ -1,5 +1,7 @@
-@import url('https://googleapis.com');
+/* --- 1. IMPORTAÇÃO DE FONTES EXTERNAS --- */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* --- 2. REGRAS GERAIS DO DOCUMENTO (HTML E BODY) --- */
 html, body {
     margin: 0 !important;
     padding: 0 !important;
@@ -8,54 +10,146 @@ html, body {
     line-height: 1.7;
 }
 
-header{
+/* --- 3. ESTRUTURA DO TOPO (HEADER) E INTRODUÇÃO --- */
+header {
     background-color: #1e72a7;
     color: white;
     margin-bottom: 2px;
-    padding: 1%;
+    padding: 15px 2%;
     box-sizing: border-box;
+    height: auto;
+    min-height: 110px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+header h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0;
     text-align: center;
+    line-height: 1.2;
 }
-#introducao{
-    text-align: center; margin: 0 
+
+header h1 .shield {
+    font-size: 30px;
+    vertical-align: middle;
 }
-#chamada{
+
+header nav {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+#introducao {
+    text-align: center;
+    margin: 0;
+}
+
+#chamada {
     font-size: 25px;
     font-weight: bold;
 }
-#explicaçao{
+
+#explicaçao {
     font-size: 20px;
 }
-#container{
-    border: 15px solid #1e72a7;
-    margin:5%;
-    margin-top:1% ;
+
+/* --- 4. SEÇÃO PRINCIPAL (CONTAINER) E INSTRUÇÕES --- */
+#container {
+    border: 15px solid #2356a3;
+    margin: 5%;
+    margin-top: 1%;
     padding: 2%;
-    display: flex;
-    display: inline-block;
-   
+    background-position: center;
+    display: block;
+    background-size: cover;
+    background-image: url('https://i.pinimg.com/736x/01/3b/72/013b725f0185478dad2df85c494758b1.jpg');
+    background-repeat: no-repeat;
 }
-#instrucoes{
+
+#instrucoes {
     text-align: center;
     font-weight: bold;
     font-size: 20px;
     margin-bottom: 20px;
 }
-#btn-confirmar-selecao{
-    background-color: #1e72a7;
+
+/* --- 5. SEÇÃO UNIFICADA DE BOTÕES --- */
+/* Base estrutural idêntica para todos os botões do site */
+header nav .btn-header, #btn-confirmar-selecao, #btn-nav-home {
+    font-family: 'Poppins', sans-serif;
     color: white;
     border: none;
-    margin-top: 20px;
     border-radius: 5px;
-    padding:10px 20px;
+    padding: 10px 20px;
     font-size: 16px;
+    font-weight: 500;
     cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
 }
 
+/* Cores de fundo e bordas específicas de cada botão */
+header nav .btn-header {
+    background-color: #3b92cc;
+    border: #175379 2px solid;
+    /*botão video selecionado*/
+}
+
+#btn-confirmar-selecao {
+    background-color: #3d95cf;
+    border: #175379 2px solid;
+    margin-top: 20px;
+    /*botão confirmat tags*/
+}
+
+#btn-nav-home {
+   background-color: #3d95cf;
+    border: #175379 2px solid;
+    margin-top: 1px;
+    /*botão voltar para seleção*/
+}
+
+/* Comportamento de clique comum a todos */
+header nav .btn-header:active, #btn-confirmar-selecao:active, #btn-nav-home:active {
+    transform: translateY(1px);
+}
+
+/* Efeitos individuais ao passar o mouse (Hover) */
+header nav .btn-header:hover {
+    background-color:#135781;
+    transform: translateY(-2px);
+    box-shadow: #d2d2eb 0px 5px 15px;
+     transition: all 0.2s linear;
+}
+
+#btn-confirmar-selecao:hover {
+    background-color: #135781;
+    transform: translateY(-2px);
+    box-shadow: #d2d2eb 0px 5px 15px;
+    transition: all 0.2s linear;
+}
+
+#btn-nav-home:hover {
+    background-color:#135781;
+    transform: translateY(-2px);
+    box-shadow: #d2d2eb 0px 5px 15px;
+     transition: all 0.2s linear;
+}
+
+/* --- 6. CHECKBOXES DE TAGS (ESTILO COM EMOJI) --- */
 .tags input[type="checkbox"] {
     appearance: none;
     width: 5%;
     height: 30px;
+    background-color: #ffffff;
     border: 2px solid #1b18ce;
     border-radius: 4px;
     cursor: pointer;
@@ -65,12 +159,10 @@ header{
     position: relative;
 }
 
-/* clique*/
 .tags input[type="checkbox"]:checked {
     background-color: #6092df !important;
 }
 
-/* Desenha o tique 🧓🏻 quando estiver marcado */
 .tags input[type="checkbox"]:checked::after {
     content: "🧓🏻";
     font-size: 30px;
@@ -79,21 +171,9 @@ header{
     left: 50%;
     transform: translate(-49%, -54%);
 }
-/*========================
-tag selecionada
-==========================*/
-#btn-nav-home {
-    background-color: #9caeb9;
-    color: white;
-    border: none;
-    
-    margin-top: 20px;
-    border-radius: 5px;
-    padding:10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-}
-#adendo{
+
+/* --- 7. ADENDOS, ERROS E CABEÇALHOS ESPECÍFICOS --- */
+#adendo {
     background-color: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
@@ -103,35 +183,46 @@ tag selecionada
     text-align: center;
     border-radius: 5px;
 }
-#header-tube h2{
-    background-color: #1e72a7;
-    color: white;
-    font-size: 34px;
-    box-sizing: border-box;
-    text-align: center;
-}
-#explicacao{
+
+#explicacao {
     font-size: 20px;
     text-align: center;
 }
-#active-tags-container{
-   background-color: #a5bef1;
+
+/* --- 8. CONTAINER DE TAGS SELECIONADAS (ATIVAS) --- */
+#active-tags-container {
+    background-color: #96c8fa;
+    border: 1px solid #7d99d3;
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    box-shadow: 0 2px 8px rgba(125, 153, 211, 0.12);
+    margin: 15px 0;
 }
-/*===============
-cards
-==================*/
+
+#active-tags-container > * {
+    background-color: #ffffff;
+    color: #135781;
+    border: 1px solid #7d99d3;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --- 9. GRADE E CARDS DE VÍDEOS (RESULTADOS) --- */
 #video-results-grid {
     display: grid;
-    /* Cria colunas automáticas que se adaptam ao tamanho da tela, mantendo cada card com no mínimo 250px */
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 2px;
 }
 
 .video-card {
-    /* No Grid, você não precisa definir a largura (width) aqui, pois o contêiner pai já controla */
     background-color: #ffffff;
-
     border-radius: 8px;
     padding: 15px;
 }
@@ -141,8 +232,90 @@ cards
     height: auto;
     display: block;
 }
-#videos-container{
-    border: 20px solid #1e72a7;
+
+#videos-container {
+    border: 20px inset #2d86bd;
     margin: 15px;
-    background-color: #a5bef1;
+    background-color: #d4eeff;
+}
+/*---painel de informaçoes sobre o video---*/
+#painel-info-custom {
+    margin-top: 20px;
+    padding: 20px;
+
+    background-color: #ffffff;
+    border: 3px solid #3874bd;
+    border-radius: 12px;
+    margin:10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#container-nome-canal,
+#container-botao-canal,
+#container-links-usados {
+    padding: 12px;
+    background-color: #f8fbff;
+    border-radius: 8px;
+}
+
+#container-nome-canal {
+    font-size: 1rem;
+}
+
+#nome-do-canal-texto {
+    font-weight: bold;
+    color: #123e81;
+}
+
+#container-botao-canal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#btn-visitar-canal {
+    text-decoration: none;
+    background-color: #2356a3;
+    color: white;
+
+    padding: 8px 16px;
+    border-radius: 6px;
+
+    transition: 0.2s;
+}
+
+#btn-visitar-canal:hover {
+    background-color: #4e86db;
+    box-shadow: 0 4px 12px rgb(179, 203, 238);
+}
+
+.titulo-links {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #2356a3;
+}
+
+#lista-links-custom {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#lista-links-custom a {
+    color: #2356a3;
+    text-decoration: none;
+    word-break: break-word;
+}
+
+#lista-links-custom a:hover {
+    text-decoration: underline;
+}
+#video-player {
+   margin-left:3%;
+   margin-right:3%;
+  
 }

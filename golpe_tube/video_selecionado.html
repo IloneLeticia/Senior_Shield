@@ -1,55 +1,43 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <title>SeniorShield - Assistir Vídeo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="golpe-tube.css">
-
 </head>
 <body>
 
     <header>
-        <h1 id="video-page-logo">Golpe Tube 🛡️</h1>
+        <h1>Golpe Tube <span class="shield">🛡️</span></h1>
         <nav>
-            <button id="btn-video-back">Voltar para o Golpe Tube</button>
-            <button id="btn-video-home">Ir para o Início</button>
+            <button id="btn-video-back" class="btn-header">Voltar para o Golpe Tube</button>
+            <button id="btn-video-home" class="btn-header">Ir para o Início</button>
         </nav>
     </header>
 
     <main>
         <section id="player-container">
             
-    
-            
             <p id="adendo">
-                adendo: o Golpe Tube é apenas uma coletânea de vídeos que os responsáveis pelo site fizeram uma curadoria. De forma alguma os conteúdos apresentados substituem ajuda profissionais
+                <strong>Aviso:</strong> Este vídeo foi selecionado pelos responsáveis pelo projeto por seu potencial educativo. As opiniões e informações apresentadas são de responsabilidade de seus autores e não substituem orientações profissionais ou de órgãos competentes.
             </p>
             
-            <div id="video-player">
+            <div id="video-player"></div>
+
+            <h2 id="video-titulo" style="margin-top: 15px;"></h2>
+
+            <div id="painel-info-custom">
                 
+                <div id="container-nome-canal">canal: <span id="nome-do-canal-texto"></span></div>
+                
+                <div id="container-botao-canal">
+                    <span>visitar canal:</span>
+                    <a id="btn-visitar-canal" href="#" target="_blank">visitar</a>
                 </div>
 
-          <div id="caixinhas">
-                
-                <div class="btn-group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        criador original
-                    </button>
-                    <ul class="dropdown-menu" id="dropdown-criador-lista">
-                        <li><span class="dropdown-item-text" id="info-nome-canal">Carregando canal...</span></li>
-                        <li><a class="dropdown-item" id="info-link-canal" href="#" target="_blank">Visitar canal</a></li>
-                    </ul>
-                </div>
-
-                <div class="btn-group">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-                        fontes
-                    </button>
-                    <ul class="dropdown-menu" id="dropdown-fontes-lista">
-                        <li><span class="dropdown-item-text">Carregando fontes...</span></li>
-                    </ul>
+                <div id="container-links-usados">
+                    <div class="titulo-links">links usados:</div>
+                    <div id="lista-links-custom"></div>
                 </div>
 
             </div>
@@ -57,8 +45,6 @@
         </section>
     </main>
 
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-<script src="player.js"></script>
+    <script src="player.js"></script>
 </body>
 </html>
-

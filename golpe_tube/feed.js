@@ -33,7 +33,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 videos.forEach((videoObj) => {
                     // Extrai o ID final da URL do embed para achar a thumb do YouTube
-                    const videoId = videoObj.url.split('/').pop();
+                    var videoId = videoObj.url.split("/").pop();
+
+               if (videoId.indexOf("?") != -1) {
+               videoId = videoId.split("?")[0];
+                                               }
                     const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`;
 
                     const card = document.createElement('div');
@@ -54,11 +58,30 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     `;
 
-                    card.addEventListener('click', () => {
-                        localStorage.setItem('videoUrlSelecionado', videoObj.url);
-                        localStorage.setItem('videoTituloSelecionado', videoObj.titulo);
-                        window.location.href = 'video_selecionado.html';
-                    });
+                   card.addEventListener('click', function () {
+
+    localStorage.setItem(
+        "videoUrlSelecionado",
+        videoObj.url
+    );
+
+    localStorage.setItem(
+        "videoTituloSelecionado",
+        videoObj.titulo
+    );
+
+    localStorage.setItem(
+        "videoCriadorSelecionado",
+        JSON.stringify(videoObj.criador)
+    );
+
+    localStorage.setItem(
+        "videoLinksSelecionados",
+        JSON.stringify(videoObj.linksUsados)
+    );
+
+    window.location.href = "video_selecionado.html";
+});
 
                     videoGrid.appendChild(card);
                 });
