@@ -2,197 +2,185 @@
 <html lang="pt-br">
 
 <head>
-
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SeniorShield</title>
 
-  <!-- CSS -->
-
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
+  <link rel="stylesheet" href="style.css">
 
   <!-- Bootstrap Icons -->
-
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-  >
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
   <!-- jsPDF -->
-
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-
 </head>
 
 <body>
 
   <!-- HEADER -->
-
   <header>
     <div class="header-conteudo">
-        <img src="Senior Shield V3.png" alt="Logo SeniorShield" class="logo-img">
-        
-        <h1>SeniorShield</h1>
+      <img src="Senior Shield V3.png" alt="Logo SeniorShield" class="logo-img">
+      <h1>SeniorShield</h1>
 
-        <div class="espacador"></div>
+      <div class="espacador"></div>
     </div>
   </header>
 
   <!-- CONTAINER -->
-
   <main class="container">
 
     <!-- FORMULÁRIO -->
-
     <section class="formulario">
 
       <h2>
-
         <i class="bi bi-file-earmark-text"></i>
         Gerador de Boletim
-
       </h2>
 
-      <p class="explicacao">
-
-        Nessa parte, você pode gerar automaticamente
-        um modelo de boletim de ocorrência e utilizá-lo
-        diretamente em uma delegacia virtual.
-
-      </p>
+      <!-- INSTRUÇÕES PASSO A PASSO -->
+      <div class="passos">
+        <p class="passos-titulo">
+          <i class="bi bi-info-circle-fill"></i> Como usar — siga os passos abaixo:
+        </p>
+        <ol class="passos-lista">
+          <li><strong>Passo 1:</strong> Preencha todos os campos do formulário com suas informações.</li>
+          <li><strong>Passo 2:</strong> Clique no botão azul <strong>"Gerar Boletim"</strong>.</li>
+          <li><strong>Passo 3:</strong> O texto do boletim aparecerá à direita. Você pode <strong>copiar</strong> ou <strong>salvar em PDF</strong>.</li>
+          <li><strong>Passo 4:</strong> Clique em <strong>"Ir para a Delegacia Virtual"</strong> e use o texto gerado para registrar a ocorrência.</li>
+        </ol>
+      </div>
 
       <!-- NOME -->
-
-      <input
-        type="text"
-        id="nome"
-        placeholder="Nome completo"
-      >
+      <label for="nome">Nome completo</label>
+      <input type="text" id="nome" placeholder="Digite seu nome completo">
 
       <!-- DATA -->
-
-      <input
-        type="date"
-        id="data"
-      >
+      <label for="data">Data do ocorrido</label>
+      <input type="date" id="data">
 
       <!-- TIPO DE GOLPE -->
-
+      <label for="tipoGolpe">Tipo de golpe</label>
       <select id="tipoGolpe">
-
-        <option value="">
-          Selecione o tipo de golpe
-        </option>
-
-        <option>
-          Golpe do Pix
-        </option>
-
-        <option>
-          WhatsApp clonado
-        </option>
-
-        <option>
-          Cartão clonado
-        </option>
-
-        <option>
-          Falso empréstimo
-        </option>
-
-        <option>
-          Falso suporte técnico
-        </option>
-
+        <option value="">Selecione o tipo de golpe</option>
+        <option>Golpe do Pix</option>
+        <option>WhatsApp clonado</option>
+        <option>Cartão clonado</option>
+        <option>Falso empréstimo</option>
+        <option>Falso suporte técnico</option>
       </select>
 
       <!-- VALOR -->
-
-      <input
-        type="text"
-        id="valor"
-        placeholder="R$ 0,00"
-      >
+      <label for="valor">Valor do prejuízo</label>
+      <input type="text" id="valor" placeholder="R$ 0,00" inputmode="numeric">
 
       <!-- DESCRIÇÃO -->
-
-      <textarea
-        id="descricao"
-        rows="7"
-        placeholder="Descreva como ocorreu o golpe"></textarea>
+      <label for="descricao">Descrição do ocorrido</label>
+      <textarea id="descricao" rows="7" placeholder="Descreva com suas palavras como ocorreu o golpe"></textarea>
 
       <!-- BOTÃO GERAR -->
-
-      <button
-        type="button"
-        id="btnGerar"
-      >
-
+      <button type="button" id="btnGerar">
         <i class="bi bi-pencil-square"></i>
         Gerar Boletim
+      </button>
 
+      <!-- BOTÃO LIMPAR -->
+      <button type="button" id="btnLimpar">
+        <i class="bi bi-arrow-counterclockwise"></i>
+        Limpar Formulário
       </button>
 
     </section>
 
     <!-- RESULTADO -->
-
     <section class="resultado">
 
       <h2>
-
         <i class="bi bi-journal-text"></i>
         Texto Gerado
-
       </h2>
 
+      <p class="explicacao" id="instrucaoResultado">
+        Preencha o formulário ao lado e clique em <strong>"Gerar Boletim"</strong> para o texto aparecer aqui.
+      </p>
+
       <!-- TEXTO -->
+      <div id="textoBoletim" aria-live="polite"></div>
 
-      <div id="textoBoletim"></div>
-
-      <!-- BOTÕES -->
-
-      <div class="botoes">
+      <!-- BOTÕES — ficam ocultos até o boletim ser gerado -->
+      <div class="botoes" id="botoesResultado" style="display: none;">
         <button type="button" id="btnCopiar">
           <i class="bi bi-copy"></i> Copiar
         </button>
-
         <button type="button" id="btnPDF">
           <i class="bi bi-file-earmark-pdf"></i> PDF
         </button>
       </div>
 
-      <a 
-        href="https://delegaciavirtual.sinesp.gov.br/portal/" 
-        target="_blank" 
+      <!-- LINK DELEGACIA — também fica oculto até o boletim ser gerado -->
+      <a
+        href="https://delegaciavirtual.sinesp.gov.br/portal/"
+        target="_blank"
         class="btnDelegacia"
+        id="btnDelegacia"
+        style="display: none;"
       >
         <i class="bi bi-box-arrow-up-right"></i> Ir para a Delegacia Virtual
       </a>
-
-     </section>
-
-        <!-- COPIAR -->
-
-        
-
-      </div>
 
     </section>
 
   </main>
 
-  <!-- JAVASCRIPT -->
+  <!-- CONTATOS DE EMERGÊNCIA -->
+  <section class="emergencia">
+    <h2 class="emergencia-titulo">
+      <i class="bi bi-telephone-fill"></i>
+      Contatos de Emergência
+    </h2>
+    <p class="emergencia-subtitulo">Se você foi vítima de um golpe, entre em contato imediatamente:</p>
+
+    <div class="emergencia-cards">
+
+      <div class="emergencia-card card-policia">
+        <div class="card-icone"><i class="bi bi-shield-fill"></i></div>
+        <div class="card-info">
+          <span class="card-nome">Polícia Civil / Emergência</span>
+          <a href="tel:190" class="card-numero">190</a>
+          <span class="card-obs">Atendimento 24 horas</span>
+        </div>
+      </div>
+
+      <div class="emergencia-card card-procon">
+        <div class="card-icone"><i class="bi bi-person-fill-exclamation"></i></div>
+        <div class="card-info">
+          <span class="card-nome">Procon</span>
+          <a href="tel:151" class="card-numero">151</a>
+          <span class="card-obs">Defesa do consumidor</span>
+        </div>
+      </div>
+
+      <div class="emergencia-card card-banco">
+        <div class="card-icone"><i class="bi bi-credit-card-fill"></i></div>
+        <div class="card-info">
+          <span class="card-nome">Seu Banco</span>
+          <span class="card-numero card-banco-txt">Verso do cartão</span>
+          <span class="card-obs">Bloqueie o cartão imediatamente</span>
+        </div>
+      </div>
+
+      <div class="emergencia-card card-golpe">
+        <div class="card-icone"><i class="bi bi-laptop-fill"></i></div>
+        <div class="card-info">
+          <span class="card-nome">Golpes pela Internet</span>
+          <a href="tel:197" class="card-numero">197</a>
+          <span class="card-obs">Polícia Federal — crimes cibernéticos</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
 
   <script src="script.js"></script>
-
 </body>
 </html>

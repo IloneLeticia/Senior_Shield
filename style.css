@@ -1,248 +1,432 @@
 * {
-
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-
 }
 
 body {
-
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: #f4f6f9;
-  color: #333;
-
+  /* MELHORIA: fonte maior e mais legível para idosos */
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 19px;
+  background-color: #f0f4f9;
+  color: #222;
+  line-height: 1.7;
 }
 
-/* HEADER */
+/* ===================== HEADER ===================== */
 
 header {
   background-color: #1565a9;
   color: white;
-  padding: 15px 40px;
+  padding: 18px 40px;
   width: 100%;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
 
 .header-conteudo {
   display: grid;
-  
-  grid-template-columns: 1fr auto 1fr; 
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  width: 100%; 
+  width: 100%;
 }
 
 .logo-img {
-  height: 80px;         
+  height: 85px;
   width: auto;
   object-fit: contain;
-  justify-self: start;  
+  justify-self: start;
 }
 
 header h1 {
-  font-size: 36px;
+  /* MELHORIA: fonte maior no título */
+  font-size: 40px;
   font-weight: bold;
-  justify-self: center; 
+  justify-self: center;
   text-align: center;
+  letter-spacing: 1px;
 }
-
 
 .espacador {
-  width: 100px; 
-  justify-self: end;    
+  width: 100px;
+  justify-self: end;
+}
+
+/* ===================== EMERGÊNCIA ===================== */
+
+.emergencia {
+  background-color: #1565a9;
+  color: white;
+  padding: 40px;
+  margin-top: 10px;
+}
+
+.emergencia-titulo {
+  font-size: 26px;
+  color: #f5c842;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.emergencia-subtitulo {
+  font-size: 18px;
+  color: rgba(255,255,255,0.75);
+  margin-bottom: 28px;
+}
+
+.emergencia-cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.emergencia-card {
+  flex: 1;
+  min-width: 200px;
+  background-color: rgba(255,255,255,0.12);
+  border-radius: 16px;
+  padding: 24px 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  border-left: 5px solid transparent;
+  transition: background-color 0.2s;
+}
+
+.emergencia-card:hover {
+  background-color: rgba(255,255,255,0.22);
+}
+
+.card-policia { border-left-color: #4fc3f7; }
+.card-procon  { border-left-color: #81c784; }
+.card-banco   { border-left-color: #ffb74d; }
+.card-golpe   { border-left-color: #f06292; }
+
+.card-icone {
+  font-size: 32px;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.card-policia .card-icone { color: #4fc3f7; }
+.card-procon  .card-icone { color: #81c784; }
+.card-banco   .card-icone { color: #ffb74d; }
+.card-golpe   .card-icone { color: #f06292; }
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-nome {
+  font-size: 16px;
+  color: rgba(255,255,255,0.7);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.card-numero {
+  font-size: 32px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  line-height: 1.1;
+  transition: color 0.2s;
+}
+
+.card-banco-txt {
+  font-size: 22px;
+}
+
+a.card-numero:hover {
+  color: #f5c842;
+  text-decoration: underline;
+}
+
+.card-obs {
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+}
+
+@media (max-width: 900px) {
+  .emergencia {
+    padding: 28px 20px;
+  }
+  .emergencia-cards {
+    flex-direction: column;
+  }
+  .controle-fonte {
+    align-items: center;
+  }
+}
+
+/* ===================== CONTAINER ===================== */
+
+.container {
+  display: flex;
+  gap: 32px;
+  padding: 40px;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* ===================== SEÇÕES ===================== */
+
+.formulario,
+.resultado {
+  flex: 1;
+  min-width: 320px;
+  background: white;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+}
+
+.formulario h2,
+.resultado h2 {
+  margin-bottom: 18px;
+  color: #1565a9;
+  /* MELHORIA: título das seções maior */
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===================== EXPLICAÇÃO ===================== */
+
+.explicacao {
+  margin-bottom: 28px;
+  /* MELHORIA: texto explicativo maior */
+  font-size: 18px;
+  line-height: 1.8;
+  color: #444;
+  background-color: #eef3fb;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border-left: 4px solid #1565a9;
+}
+
+/* ===================== LABELS ===================== */
+
+label {
+  display: block;
+  /* MELHORIA: labels maiores para facilitar leitura */
+  font-size: 17px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+/* ===================== INPUTS ===================== */
+
+input,
+select,
+textarea {
+  width: 100%;
+  /* MELHORIA: padding e fonte maiores para idosos */
+  padding: 18px;
+  margin-bottom: 22px;
+  border-radius: 12px;
+  border: 2px solid #ccc;
+  font-size: 18px;
+  font-family: inherit;
+  color: #222;
+  transition: border-color 0.25s;
+  background-color: #fafafa;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1565a9;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(21, 101, 169, 0.15);
+}
+
+/* MELHORIA: feedback visual de erro nos campos obrigatórios */
+input.campo-erro,
+select.campo-erro,
+textarea.campo-erro {
+  border-color: #c0392b;
+  background-color: #fff5f5;
+}
+
+/* ===================== BOTÕES ===================== */
+
+button {
+  width: 100%;
+  /* MELHORIA: botão maior e mais fácil de clicar */
+  padding: 18px;
+  border: none;
+  border-radius: 12px;
+  background-color: #1565a9;
+  color: white;
+  /* MELHORIA: fonte maior nos botões */
+  font-size: 20px;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.25s, transform 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+button:hover {
+  background-color: #0e4f82;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+/* ===================== BOTÕES DO RESULTADO ===================== */
+
+.botoes {
+  display: flex;
+  gap: 15px;
+  margin-top: 22px;
+}
+
+.botoes button {
+  flex: 1;
+}
+
+/* ===================== TEXTO DO BOLETIM ===================== */
+
+#textoBoletim {
+  background-color: #f4f7fb;
+  padding: 22px;
+  border-radius: 15px;
+  min-height: 280px;
+  white-space: pre-line;
+  line-height: 1.9;
+  /* MELHORIA: fonte maior no texto gerado */
+  font-size: 18px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+  border: 1px solid #dce4ef;
+  color: #222;
+}
+
+/* ===================== BOTÃO DELEGACIA ===================== */
+
+.btnDelegacia {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  /* MELHORIA: padding maior */
+  padding: 18px;
+  margin-top: 18px;
+  border-radius: 12px;
+  background-color: #1e8a3e;
+  color: white;
+  /* MELHORIA: fonte maior */
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.25s, transform 0.1s;
+}
+
+.btnDelegacia:hover {
+  background-color: #166c30;
+}
+
+.btnDelegacia:active {
+  transform: scale(0.98);
+}
+
+/* ===================== PASSOS ===================== */
+
+.passos {
+  background-color: #fffbea;
+  border: 2px solid #f0c040;
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin-bottom: 26px;
+}
+
+.passos-titulo {
+  font-size: 18px;
+  font-weight: bold;
+  color: #7a5700;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.passos-lista {
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.passos-lista li {
+  font-size: 17px;
+  line-height: 1.7;
+  color: #444;
+}
+
+/* ===================== BOTÃO LIMPAR ===================== */
+
+#btnLimpar {
+  margin-top: 12px;
+  background-color: transparent;
+  color: #888;
+  border: 2px solid #ccc;
+  font-size: 18px;
+  font-weight: normal;
+  transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+}
+
+#btnLimpar:hover {
+  background-color: #fdecea;
+  color: #c0392b;
+  border-color: #c0392b;
 }
 
 
-@media (max-width: 768px) {
+
+/* ===================== RESPONSIVIDADE ===================== */
+
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .botoes {
+    flex-direction: column;
+  }
+
+  header h1 {
+    font-size: 30px;
+  }
+
   .header-conteudo {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
+
   .logo-img {
-    height: 60px;
+    height: 65px;
   }
+
   .espacador {
     display: none;
   }
-}
-
-/* CONTAINER */
-
-.container {
-
-  display: flex;
-
-  gap: 30px;
-
-  padding: 40px;
-
-  flex-wrap: wrap;
-
-}
-
-/* FORMULÁRIO E RESULTADO */
-
-.formulario,
-.resultado {
-
-  flex: 1;
-
-  min-width: 320px;
-
-  background: white;
-
-  padding: 30px;
-
-  border-radius: 20px;
-
-  box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
-
-}
-
-.formulario h2,
-.resultado h2 {
-
-  margin-bottom: 20px;
-
-  color: #1565a9;
-
-}
-
-/* TEXTO EXPLICAÇÃO */
-
-.explicacao {
-
-  margin-bottom: 25px;
-
-  line-height: 1.6;
-
-  font-size: 17px;
-
-}
-
-/* INPUTS */
-
-input,
-select,
-textarea {
-
-  width: 100%;
-
-  padding: 16px;
-
-  margin-bottom: 18px;
-
-  border-radius: 12px;
-
-  border: 1px solid #ccc;
-
-  font-size: 17px;
-
-}
-
-/* BOTÕES */
-
-button {
-
-  width: 100%;
-
-  padding: 16px;
-
-  border: none;
-
-  border-radius: 12px;
-
-  background-color: #1565a9;
-
-  color: white;
-
-  font-size: 18px;
-
-  cursor: pointer;
-
-  transition: 0.3s;
-
-}
-
-button:hover {
-
-  background-color: #0e4f82;
-
-}
-
-/* BOTÕES RESULTADO */
-
-.botoes {
-
-  display: flex;
-
-  gap: 15px;
-
-  margin-top: 20px;
-
-}
-
-/* TEXTO BOLETIM */
-
-#textoBoletim {
-  background-color: #f1f1f1;
-  padding: 20px;
-  border-radius: 15px;
-  min-height: 300px;
-  white-space: pre-line;
-  line-height: 1.8;
-  font-size: 17px;
-
-  
-  word-wrap: break-word;       
-  overflow-wrap: break-word;   
-  max-width: 100%;             
-}
-
-.btnDelegacia {
-  display: block;           
-  width: 100%;
-  padding: 16px;
-  margin-top: 15px;        
-  border-radius: 12px;
-  background-color: #28a745; 
-  color: white;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  text-decoration: none;     
-  transition: background-color 0.3s;
-}
-
-.btnDelegacia:hover {
-  background-color: #218838; 
-}
-
-
-.btnDelegacia i {
-  margin-right: 8px;
-}
-
-/* RESPONSIVIDADE */
-
-@media (max-width: 768px) {
-
-  .container {
-
-    flex-direction: column;
-
-  }
-
-  .botoes {
-
-    flex-direction: column;
-
-  }
-
-  header h1 {
-
-    font-size: 30px;
-
-  }
-
 }
