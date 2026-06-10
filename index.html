@@ -4,52 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SeniorShield</title>
-  <link rel="stylesheet" href="css/index.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
 
   <header>
-    <div class="logo">
-      <img src="img/logo.png" alt="Logo SeniorShield">
-      <span class="logo-nome">Senior<strong>Shield</strong></span>
-    </div>
-    <a class="btn-header" href="admin.html">Ver respostas</a>
+    <img src="img/logo.png" alt="Logo SeniorShield">
+    <span class="logo-nome">Senior<strong>Shield</strong></span>
   </header>
 
   <div class="hero">
     <h1>Você está em risco de golpe?</h1>
-    <p>Responda as perguntas abaixo com sinceridade.</p>
+    <p>Responda as perguntas abaixo com sinceridade. Ao final, você recebe orientações personalizadas.</p>
   </div>
 
   <main>
 
-    <div class="info">
-      <h3>Como funciona?</h3>
-      <p>Leia cada pergunta e clique em <strong>Sim</strong> ou <strong>Não</strong>. Ao final, clique em <strong>Salvar respostas</strong>.</p>
-    </div>
+    <div id="secao-checklist">
 
-    <div id="loading">Carregando perguntas...</div>
-
-    <form id="form-checklist" style="display:none">
+      <div class="instrucao">
+        <div class="icone">💡</div>
+        <p>Leia cada pergunta com calma e clique em <strong>Sim</strong> ou <strong>Não</strong>. Seja honesto — não existe resposta certa ou errada!</p>
+      </div>
 
       <div class="campo-nome">
         <label for="nome-usuario">Seu nome</label>
-        <input type="text" id="nome-usuario" placeholder="Digite seu nome">
+        <input type="text" id="nome-usuario" placeholder="Digite seu nome aqui" autocomplete="given-name">
+      </div>
+
+      <div class="progresso-wrap">
+        <div class="progresso-label">
+          <span>Progresso</span>
+          <span id="prog-texto">0 de 8 respondidas</span>
+        </div>
+        <div class="progresso-fundo">
+          <div class="progresso-fill" id="prog-fill"></div>
+        </div>
       </div>
 
       <div id="lista-perguntas"></div>
 
-      <button type="button" class="btn-salvar-respostas" onclick="salvarRespostas()">
-        Salvar respostas
-      </button>
+      <button class="btn-ver" onclick="verResultado()">Ver meu resultado</button>
 
-    </form>
+    </div>
+
+    <div id="secao-resultado"></div>
 
   </main>
 
+  <footer>SeniorShield &mdash; Proteção para quem você ama 💙</footer>
+
   <script src="js/index.js"></script>
+
 </body>
 </html>

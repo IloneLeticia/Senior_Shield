@@ -1,86 +1,119 @@
 {
-  "golpes_catalogados": [
-    {
-      "id": "loja",
-      "titulo": "Desconfio de loja falsa",
-      "sinais": ["Preço muito abaixo do normal", "Site sem CNPJ", "Sem avaliações confiáveis"],
-      "acoes": ["Não finalizar a compra", "Pesquisar o nome da loja", "Verificar reputação"],
-      "link": "https://www.reclameaqui.com.br/"
-    },
-    {
-      "id": "namorado_suspeito",
-      "titulo": "Golpe do parceiro virtual",
-      "sinais": ["As fotos sempre tem uma qualidade de imagem muito boa", "Não aceita ir em videochamadas", "Pede mimos como dinheiro, presentes, etc.", "Não tem nenhuma rede social"],
-      "acoes": ["Pedir para mandar mensagens de voz", "Fazer uma chamada de vídeo para confirmar", "Baixe uma imagem da pessoa e utilize o link abaixo para verificar"],
-      "link": "https://www.zerogpt.com/pt/ai-image-detector"
-    },
-    {
-      "id": "banco_bloqueado",
-      "titulo": "Golpe do banco bloqueado",
-      "sinais": ["Mensagem no WhatsApp de um número sem sinal de verificado", "Ligação pedindo informações pessoais para desbloquear a conta", "Pedido de dinheiro para desbloquear a conta"],
-      "acoes": ["Ligar para o canal oficial do banco", "Nunca transferir dinheiro sem ligar para o número oficial do seu banco", "Em caso do pedido ser por boleto Pix, verifique o boleto pelo link abaixo:"],
-      "link": "https://www.serasa.com.br/limpa-nome-online/validador-boletos/"
-    },
-    {
-      "id": "whatsapp",
-      "titulo": "Golpe do novo número",
-      "sinais": ["Parente pedindo dinheiro urgente", "Foto de perfil conhecida, mas número estranho", "Pressão emocional para depósito rápido"],
-      "acoes": ["Ligar para o número antigo do parente", "Fazer uma chamada de vídeo para confirmar", "Nunca transferir dinheiro sem falar por voz"],
-      "link": "https://web.whatsapp.com/"
-    }
-  ],
-  "formulario_relato_usuario": {
-    "descricao": "Área para o idoso cadastrar um novo golpe que identificou",
-    "campos_input": [
-      { "id": "user_titulo", "label": "Qual o nome do golpe?", "tipo": "text" },
-      { "id": "user_sinais", "label": "Quais sinais você percebeu? (Separe por vírgula)", "tipo": "text" },
-      { "id": "user_descricao", "label": "Conte o que aconteceu", "tipo": "textarea" },
-      { "id": "user_data", "label": "Quando aconteceu?", "tipo": "date" }
-    ],
-    "botao_salvar": "Enviar para análise do Netinho"
-  },
   "perguntas": [
     {
       "id": "1",
-      "texto": "Você recebeu uma ligação de alguém dizendo ser do seu banco pedindo sua senha ou dados do cartão?",
-      "categoria": "Ligação Suspeita"
+      "categoria": "Ligação Suspeita",
+      "emoji": "📞",
+      "texto": "Você recebeu uma ligação de alguém dizendo ser do seu banco pedindo sua senha ou dados do cartão?"
     },
     {
       "id": "2",
-      "texto": "Alguém pediu que você fizesse uma transferência ou Pix urgente para 'liberar' um benefício ou prêmio?",
-      "categoria": "Golpe Financeiro"
+      "categoria": "Golpe Financeiro",
+      "emoji": "💸",
+      "texto": "Alguém pediu que você fizesse uma transferência ou Pix urgente para 'liberar' um benefício ou prêmio?"
     },
     {
       "id": "3",
-      "texto": "Você recebeu uma mensagem dizendo que um familiar está em perigo e precisa de dinheiro imediatamente?",
-      "categoria": "Golpe Familiar"
+      "categoria": "Golpe Familiar",
+      "emoji": "👨‍👩‍👧",
+      "texto": "Você recebeu uma mensagem dizendo que um familiar está em perigo e precisa de dinheiro imediatamente?"
     },
     {
       "id": "4",
-      "texto": "Alguém pediu para você instalar um aplicativo no celular para 'ajudar' ou 'verificar' sua conta?",
-      "categoria": "Acesso Remoto"
+      "categoria": "Acesso Remoto",
+      "emoji": "📱",
+      "texto": "Alguém pediu para você instalar um aplicativo no celular para 'ajudar' ou 'verificar' sua conta?"
     },
     {
       "id": "5",
-      "texto": "Você foi informado que ganhou um prêmio ou sorteio, mas precisa pagar uma taxa para recebê-lo?",
-      "categoria": "Golpe de Prêmio"
+      "categoria": "Golpe de Prêmio",
+      "emoji": "🎁",
+      "texto": "Você foi informado que ganhou um prêmio ou sorteio, mas precisa pagar uma taxa para recebê-lo?"
     },
     {
       "id": "6",
-      "texto": "Alguém pediu seus dados pessoais (CPF, RG, data de nascimento) por telefone ou mensagem sem você ter iniciado o contato?",
-      "categoria": "Roubo de Dados"
+      "categoria": "Roubo de Dados",
+      "emoji": "🪪",
+      "texto": "Alguém pediu seus dados pessoais (CPF, RG, data de nascimento) por telefone ou mensagem sem você ter iniciado o contato?"
     },
     {
       "id": "7",
-      "texto": "Você recebeu um link por WhatsApp ou SMS pedindo para atualizar seus dados bancários ou do INSS?",
-      "categoria": "Phishing"
+      "categoria": "Phishing",
+      "emoji": "🔗",
+      "texto": "Você recebeu um link por WhatsApp ou SMS pedindo para atualizar seus dados bancários ou do INSS?"
     },
     {
       "id": "8",
-      "texto": "Uma pessoa que você conheceu recentemente pela internet pediu dinheiro emprestado ou um favor financeiro?",
-      "categoria": "Golpe Romântico"
+      "categoria": "Golpe Romântico",
+      "emoji": "💌",
+      "texto": "Uma pessoa que você conheceu recentemente pela internet pediu dinheiro emprestado ou um favor financeiro?"
     }
   ],
-  "respostas": [],
-  "$schema": "./node_modules/json-server/schema.json"
-  }
+  "recomendacoes": {
+    "1": {
+      "tipo": "perigo",
+      "icone": "🚨",
+      "titulo": "Cuidado com ligações do banco",
+      "texto": "Bancos nunca pedem senha ou dados do cartão por telefone. Se receber essa ligação, desligue e ligue de volta para o número oficial impresso no seu cartão."
+    },
+    "2": {
+      "tipo": "perigo",
+      "icone": "🚫",
+      "titulo": "Pix e transferências urgentes são golpe",
+      "texto": "Nenhuma empresa legítima pede Pix para liberar benefício ou prêmio. Sinta urgência? Desconfie! Ligue para um familiar antes de qualquer transferência."
+    },
+    "3": {
+      "tipo": "perigo",
+      "icone": "👨‍👩‍👧",
+      "titulo": "Golpe do familiar em perigo",
+      "texto": "Antes de mandar dinheiro, ligue diretamente para o familiar usando o número que você já conhece. Golpistas criam pânico — respire fundo e confirme a situação."
+    },
+    "4": {
+      "tipo": "perigo",
+      "icone": "📵",
+      "titulo": "Nunca instale aplicativo por pedido de estranhos",
+      "texto": "Apps de 'suporte' podem dar controle total do seu celular a golpistas. Peça ajuda apenas a pessoas de confiança ou vá pessoalmente a uma loja autorizada."
+    },
+    "5": {
+      "tipo": "cuidado",
+      "icone": "🎭",
+      "titulo": "Prêmio verdadeiro não exige pagamento",
+      "texto": "Se você ganhou de verdade, não paga nada. Cobrar taxa para receber prêmio é golpe clássico. Pesquise o nome da empresa antes de qualquer ação."
+    },
+    "6": {
+      "tipo": "cuidado",
+      "icone": "🛑",
+      "titulo": "Proteja seus dados pessoais",
+      "texto": "CPF, RG e data de nascimento são dados sensíveis. Nunca os forneça a quem ligou para você. Compartilhe apenas quando você tiver iniciado o contato."
+    },
+    "7": {
+      "tipo": "perigo",
+      "icone": "🔗",
+      "titulo": "Links suspeitos são armadilhas",
+      "texto": "Não clique em links sobre banco ou INSS recebidos por mensagem. Acesse sempre digitando o endereço oficial no navegador. Em dúvida, peça ajuda a alguém de confiança."
+    },
+    "8": {
+      "tipo": "cuidado",
+      "icone": "💌",
+      "titulo": "Cuidado com amizades virtuais pedindo dinheiro",
+      "texto": "Golpistas criam perfis falsos para ganhar confiança e depois pedir dinheiro. Nunca envie valores para pessoas que você só conhece pela internet."
+    }
+  },
+  "dicasGerais": [
+    {
+      "icone": "📞",
+      "titulo": "Número de emergência",
+      "texto": "Suspeita de golpe? Ligue para o Procon (151) ou para a Delegacia de Crimes Digitais do seu estado."
+    },
+    {
+      "icone": "👨‍👩‍👦",
+      "titulo": "Fale com a família",
+      "texto": "Sempre converse com um filho, sobrinho ou amigo de confiança antes de tomar qualquer decisão financeira envolvendo estranhos."
+    },
+    {
+      "icone": "🏦",
+      "titulo": "Ligue para seu banco",
+      "texto": "Qualquer dúvida sobre sua conta: use o número impresso no verso do seu cartão. Nunca use número enviado por mensagem."
+    }
+  ]
+}
