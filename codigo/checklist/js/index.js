@@ -1,9 +1,3 @@
-/* ══════════════════════════════════════════════
-   SeniorShield — index.js
-   Dados carregados localmente (sem servidor)
-══════════════════════════════════════════════ */
-
-/* ── DADOS EMBUTIDOS (equivalente ao dados.json) ── */
 var DADOS = {
   "perguntas": [
     {
@@ -132,7 +126,6 @@ var respostas     = {};
 
 /* ── INICIALIZAÇÃO ── */
 window.onload = function () {
-  // Carrega os dados direto da variável DADOS (sem precisar de servidor)
   perguntas     = DADOS.perguntas;
   recomendacoes = DADOS.recomendacoes;
   dicasGerais   = DADOS.dicasGerais;
@@ -180,7 +173,7 @@ function atualizarProgresso() {
   document.getElementById('prog-texto').textContent = feitas + ' de ' + total + ' respondidas';
 }
 
-/* ── LOCAL STORAGE (salva rascunho enquanto preenche) ── */
+/* ── LOCAL STORAGE ── */
 function salvarNoStorage() {
   localStorage.setItem('ss_nome', document.getElementById('nome-usuario').value);
   localStorage.setItem('ss_respostas', JSON.stringify(respostas));
