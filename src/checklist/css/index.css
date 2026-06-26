@@ -7,71 +7,6 @@ body {
   min-height: 100vh;
 }
 
-.navbar {
-  background: #1e72a7;
-  padding: 0 40px;
-  display: flex;
-  align-items: center;
-  min-height: 110px; 
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  flex-wrap: wrap;
-}
-
-.navbar-logo {
-    margin-right: 0; /* Remove o empurrão para a esquerda */
-    justify-content: center;
-    width: 100%;
-  }
-.navbar-logo {
-  display: flex; 
-  align-items: center;
-  gap: 16px; 
-  text-decoration: none; 
-  margin-right: auto;
-}
-
-.navbar-logo img { 
-  width: 85px; 
-  height: 85px; 
-  object-fit: contain; 
-}
-
-.navbar-logo span { 
-  font-size: 32px; 
-  font-weight: 400; 
-  color: #fff; 
-}
-
-.navbar-logo strong { 
-  font-weight: 800; 
-}
-
-.navbar-links { 
-  display: flex; 
-  align-items: center; 
-  gap: 12px; 
-  list-style: none; 
-}
-
-.navbar-links a {
-  display: block; 
-  padding: 12px 24px;
-  color: #fff; 
-  text-decoration: none;
-  font-size: 22px; 
-  font-weight: 700; 
-  border-radius: 8px;
-  transition: background 0.15s, color 0.15s; 
-  white-space: nowrap;
-}
-
-.navbar-links a:hover, .navbar-links a.ativo {
-  background: rgba(255,255,255,0.24);
-  text-decoration: underline;
-}
 
 .hero {
   background: linear-gradient(160deg, #1e72a7 0%, #155d8a 100%);
@@ -388,41 +323,103 @@ footer {
   .score-bloco { flex-direction: column; text-align: center; }
 }
 
-/* 2. ADICIONE ESTA MEDIA QUERY NO FINAL DO SEU ARQUIVO (Abaixo de 900px) */
+/*------navbar------*/
+/*em tela grande fica na esquerda e direita e em telas menores centraliza*/
+.navbar {
+  background: #1e72a7;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Empurra o logo para a esquerda e os links para a direita */
+  min-height: 110px; 
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  flex-wrap: wrap; /* Segurança para telas menores */
+}
+
+.navbar-logo {
+  display: flex; 
+  align-items: center;
+  gap: 16px; 
+  text-decoration: none; 
+}
+
+.navbar-logo img { 
+  width: 85px; 
+  height: 85px; 
+  object-fit: contain; 
+}
+
+.navbar-logo span { 
+  font-size: 32px; 
+  font-weight: 400; 
+  color: #fff; 
+}
+
+.navbar-logo strong { 
+  font-weight: 800; 
+}
+
+.navbar-links { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  list-style: none; 
+}
+
+.navbar-links a {
+  display: block; 
+  padding: 12px 24px;
+  color: #fff; 
+  text-decoration: none;
+  font-size: 22px; 
+  font-weight: 700; 
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s; 
+  white-space: nowrap;
+}
+
+.navbar-links a:hover, .navbar-links a.ativo {
+  background: rgba(255,255,255,0.24);
+  text-decoration: underline;
+}
+
+/* ── RESPONSIVIDADE (Abaixo de 900px) ── */
 @media (max-width: 900px) {
   .navbar {
     padding: 15px 20px;
     min-height: auto;
-    flex-direction: column; /* Empilha o Logo e os Links */
+    flex-direction: column; /* Empilha no celular para não esmagar os textos */
     gap: 15px;
     text-align: center;
   }
 
   .navbar-logo {
-    margin-right: 0; /* Remove o empurrão para a esquerda */
-    justify-content: center;
     width: 100%;
+    justify-content: center;
   }
 
   .navbar-logo img {
-    width: 65px; /* Reduz um pouco o tamanho do logo */
+    width: 65px; 
     height: 65px;
   }
 
   .navbar-logo span {
-    font-size: 26px; /* Reduz o título para caber no celular */
+    font-size: 26px; 
   }
 
   .navbar-links {
     width: 100%;
     justify-content: center;
-    flex-wrap: wrap; /* Permite que os links quebrem linha entre si se faltar espaço */
+    flex-wrap: wrap; 
     gap: 8px;
   }
 
   .navbar-links a {
-    font-size: 18px; /* Diminui a fonte do link sem perder a legibilidade */
-    padding: 8px 16px; /* Reduz o clique sem ficar colado */
-    white-space: normal; /* Permite quebra se o nome for muito grande */
+    font-size: 18px; 
+    padding: 8px 16px; 
+    white-space: normal; 
   }
 }
