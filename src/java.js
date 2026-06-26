@@ -235,5 +235,143 @@ function renderizarComentarios(dados) {
         `;
     });
 }
+// === LÓGICA DO ASSISTENTE NETINHO ===
 
+// Função para abrir e fechar a janela do chat
+window.toggleChat = function() {
+  const chat = document.getElementById('netinho-chat-window');
+  const chatBody = document.getElementById('chat-mensagens');
+  
+  // Alterna o estado de exibição
+  if (chat.style.display === 'none') {
+    chat.style.display = 'flex';
+    // Rola para o final da conversa quando abrir
+    chatBody.scrollTop = chatBody.scrollHeight;
+  } else {
+    chat.style.display = 'none';
+  }
+};
+
+// Função que define os botões do menu inicial
+function mostrarMenuInicial() {
+  const chatOpcoes = document.getElementById('chat-opcoes');
+  
+  chatOpcoes.innerHTML = `
+    <button onclick="responder('Estou assustado')">Estou assustado</button>
+    <button onclick="responder('Caí em um golpe')">Caí em um golpe, preciso de ajuda</button>
+    <button onclick="responder('Ver ferramentas')">Ver ferramentas de proteção</button>
+    <button onclick="responder('Só quero conversar')">Só quero conversar</button>
+  `;
+  chatOpcoes.style.display = 'flex';
+}
+
+// Função que define o menu de ferramentas (links diretos)
+function mostrarMenuFerramentas() {
+  const chatBody = document.getElementById('chat-mensagens');
+  const chatOpcoes = document.getElementById('chat-opcoes');
+
+  chatBody.innerHTML += `<div class="mensagem netinho">Aqui estão as ferramentas que temos para te proteger:</div>`;
+  
+  chatOpcoes.innerHTML = `
+    <button onclick="window.location.href='checklist/checklist.html'">Checklist de Risco</button>
+    <button onclick="window.location.href='golpe/cadastrar_golpe.html'">Registrar Golpe</button>
+    <button onclick="window.location.href='boletim/index.html'">Gerar Boletim</button>
+    <button onclick="window.location.href='golpe_tube/golpetube_main.html'">Assistir no Golpe Tube</button>
+    <button onclick="voltarAoInicio()" style="background: #e4eeff; border-color: #0f3f72;">⬅ Voltar ao início</button>
+  `;
+  
+  // CORREÇÃO: Garante que os botões apareçam na tela novamente!
+  chatOpcoes.style.display = 'flex';
+  
+  // Rola para baixo após adicionar a mensagem
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+// Função para reiniciar a conversa e voltar às opções principais
+function voltarAoInicio() {
+    const chatBody = document.getElementById('chat-mensagens');
+    
+    // Mostra que o usuário escolheu voltar
+    chatBody.innerHTML += `<div class="mensagem usuario">Voltar ao início</div>`;
+    
+    // Netinho responde novamente
+    chatBody.innerHTML += `<div class="mensagem netinho">Como posso te ajudar agora?</div>`;
+    
+    // Carrega os botões iniciais
+    mostrarMenuInicial();
+    
+    // Rola a tela para o final
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+// Função principal de diálogo
+function responder(opcao) {
+  const chatBody = document.getElementById('chat-mensagens');
+  const chatOpcoes = document.getElementById('chat-opcoes');
+  
+  // 1. Mostrar a mensagem que o usuário escolheu
+  chatBody.innerHTML += `<div class="mensagem usuario">${opcao}</div>`;
+  
+  // Esconder os botões enquanto o Netinho "digita"
+  chatOpcoes.style.display = 'none';
+  chatBody.scrollTop = chatBody.scrollHeight;
+
+  // 2. Simular um tempo de resposta (1 segundo) para parecer mais humano
+  setTimeout(() => {
+    let respostaNetinho = "";
+    
+    // Se escolheu ver ferramentas, vai direto para a função do menu de ferramentas
+    if (opcao === 'Ver ferramentas') {
+        mostrarMenuFerramentas();
+        return; // Sai da função para não criar conflito com os botões abaixo
+    }
+
+    // Lógica de diálogos acolhedores
+    if (opcao === 'Estou assustado') {
+      respostaNetinho = "Respire fundo. A internet pode ser intimidante, mas você não precisa enfrentar isso só. O que acha de fazermos um checklist rápido para ver se está tudo bem com sua segurança?";
+      chatOpcoes.innerHTML = `
+        <button onclick="window.location.href='checklist/checklist.html'">Fazer Checklist</button>
+        <button onclick="voltarAoInicio()">Voltar ao início</button>
+      `;
+    } 
+    else if (opcao === 'Caí em um golpe') {
+      respostaNetinho = "Sinto muito por isso. A culpa nunca é sua, os criminosos estudam muito para enganar as pessoas. Vamos tomar as medidas necessárias com calma? Você pode registrar o golpe para alertar outros ou gerar um boletim.";
+      chatOpcoes.innerHTML = `
+        <button onclick="window.location.href='golpe/cadastrar_golpe.html'">Registrar Golpe</button>
+        <button onclick="window.location.href='boletim/index.html'">Gerar Boletim</button>
+        <button onclick="voltarAoInicio()">Voltar ao início</button>
+      `;
+    }
+    else if (opcao === 'Só quero conversar') {
+      respostaNetinho = "Adoro uma boa conversa! Às vezes, só de falar sobre o que estamos sentindo, o peso diminui. Como está sendo o seu dia hoje?";
+      chatOpcoes.innerHTML = `
+        <button onclick="responder('Está sendo difícil')">Está sendo difícil</button>
+        <button onclick="responder('Está tudo bem')">Está tudo bem</button>
+        <button onclick="voltarAoInicio()">Voltar ao início</button>
+      `;
+    }
+    else if (opcao === 'Está sendo difícil' || opcao === 'Está tudo bem') {
+        respostaNetinho = "Entendo perfeitamente. Lembre-se que estou aqui neste cantinho da tela sempre que precisar. Quer conhecer alguma ferramenta nossa para se sentir mais seguro?";
+        chatOpcoes.innerHTML = `
+          <button onclick="mostrarMenuFerramentas()">Sim, quero ver</button>
+          <button onclick="voltarAoInicio()">Voltar ao início</button>
+        `;
+    }
+
+    // Adiciona a resposta do Netinho na tela
+    chatBody.innerHTML += `<div class="mensagem netinho">${respostaNetinho}</div>`;
+    
+    // Mostra os novos botões na tela
+    chatOpcoes.style.display = 'flex';
+    
+    // Rola para o fim da conversa
+    chatBody.scrollTop = chatBody.scrollHeight;
+    
+  }, 1000); // Fim do atraso de 1 segundo
+}
+
+// Inicializa o chat quando o site terminar de carregar
+document.addEventListener("DOMContentLoaded", () => {
+    mostrarMenuInicial();
+});
  
