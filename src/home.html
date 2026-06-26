@@ -32,7 +32,9 @@
       <p>O SeniorShield te ajuda a reconhecer golpes, aprender a se proteger e saber o que fazer se algo acontecer. Com calma, juntos.</p>
     </div>
     <div class="hero-mascote">
-      <img src="img/netinho.png" alt="Netinho" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <a href="javascript:void(0)" onclick="toggleChat()" style="display: block; cursor: pointer;">
+        <img src="img/netinhoassistente.png" alt="Netinho" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      </a>
     </div>
   </section>
   
@@ -184,5 +186,30 @@
   <footer>feito com carinho por SeniorShield</footer>
 
   <script src="java.js"></script>
+  <!-- === WIDGET DO NETINHO === -->
+<div id="netinho-widget">
+  <!-- Botão flutuante -->
+  <button id="netinho-btn-abrir" onclick="toggleChat()">
+    <img src="img/netinho.png" alt="Falar com Netinho">
+  </button>
+  
+  <!-- Janela de Conversa -->
+  <div id="netinho-chat-window" style="display: none;">
+    <div class="chat-header">
+      <span>Netinho 💙</span>
+      <button onclick="toggleChat()" class="btn-fechar">X</button>
+    </div>
+    
+    <div class="chat-body" id="chat-mensagens">
+      <div class="mensagem netinho">
+        Olá! Eu sou o Netinho. Sei que a internet pode dar um pouco de medo às vezes. Como você está se sentindo hoje?
+      </div>
+    </div>
+    
+    <div class="chat-opcoes" id="chat-opcoes">
+      <!-- Os botões serão carregados dinamicamente pelo JavaScript -->
+    </div>
+  </div>
+</div>
 </body>
 </html>
