@@ -11,19 +11,69 @@ html, body {
 }
 
 /* --- 3. ESTRUTURA DO TOPO (HEADER) E INTRODUÇÃO --- */
+.navbar {
+  background: #1e72a7;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  min-height: 110px; 
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.navbar-logo {
+  display: flex; 
+  align-items: center;
+  gap: 16px; 
+  text-decoration: none; 
+  margin-right: auto;
+}
+
+.navbar-logo img { 
+  width: 85px; 
+  height: 85px; 
+  object-fit: contain; 
+}
+
+.navbar-logo span { 
+  font-size: 32px; 
+  font-weight: 400; 
+  color: #fff; 
+}
+
+.navbar-logo strong { 
+  font-weight: 800; 
+}
+
+.navbar-links { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  list-style: none; 
+}
+
+.navbar-links a {
+  display: block; 
+  padding: 12px 24px;
+  color: #fff; 
+  text-decoration: none;
+  font-size: 22px; 
+  font-weight: 700; 
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s; 
+  white-space: nowrap;
+}
+
+.navbar-links a:hover, .navbar-links a.ativo {
+  background: rgba(255,255,255,0.24);
+  text-decoration: underline;
+}
 header {
     background-color: #1e72a7;
-    color: white;
-    margin-bottom: 2px;
-    padding: 15px 2%;
-    box-sizing: border-box;
-    height: auto;
-    min-height: 110px; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 12px;
 }
 
 header h1 {
@@ -32,21 +82,14 @@ header h1 {
     font-weight: 700;
     margin: 0;
     text-align: center;
-    line-height: 1.2;
+    color: white;
+    padding: 16px 0;
 }
 
 header h1 .shield {
     font-size: 30px;
     vertical-align: middle;
 }
-
-header nav {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    align-items: center;
-}
-
 #introducao {
     text-align: center;
     margin: 0;
