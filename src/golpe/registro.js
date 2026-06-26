@@ -11,11 +11,10 @@ function carregarEstatisticasERelatos() {
         .catch(error => console.error("Erro ao carregar dados do gráfico/relatos:", error));
 }
 
-// Cria o gráfico de barras horizontais nativo
+// Cria o gráfico de pizza nativo com legenda estilizada
 function renderizarGrafico(dados) {
     const graficoBarras = document.getElementById("grafico-barras");
     
-    // Se o elemento não existir nesta página, não faz nada
     if (!graficoBarras) return;
 
     // Mapeamento de contagem
@@ -26,29 +25,72 @@ function renderizarGrafico(dados) {
         "Roubo de Dados": 0
     };
 
+    let totalGeral = 0;
     dados.forEach(item => {
         if (contagemTipos[item.tipo_golpe] !== undefined) {
             contagemTipos[item.tipo_golpe]++;
+            totalGeral++;
         }
     });
 
-    const maiorQuantidade = Math.max(...Object.values(contagemTipos), 1);
+    // Se não houver dados salvos, exibe uma mensagem amigável
+    if (totalGeral === 0) {
+        graficoBarras.innerHTML = "<p style='text-align:center; color:#666;'>Nenhum golpe registrado ainda.</p>";
+        return;
+    }
 
-    graficoBarras.innerHTML = "";
+    // Cores definidas para cada tipo de golpe
+    const cores = {
+        "Fraude de Consumo": "#1e72a7",
+        "Parceiro Virtual": "#2c83b9",
+        "Suposta Autoridade": "#0f3f72",
+        "Roubo de Dados": "#bcd7e9"
+    };
+
+    // Calcula os ângulos acumulados para montar as fatias da pizza
+    let percentualAcumulado = 0;
+    const fatiasGradiente = [];
+    let legendaHTML = "";
+
     Object.keys(contagemTipos).forEach(tipo => {
         const total = contagemTipos[tipo];
-        const larguraPorcentagem = (total / maiorQuantidade) * 100;
+        const porcentagem = (total / totalGeral) * 100;
+        const cor = cores[tipo];
 
-        graficoBarras.innerHTML += `
-            <div style="margin-bottom: 20px;">
-                <span style="font-size: 18px; font-weight: 700; color: #0f3f72; display: block; margin-bottom: 5px;">${tipo}</span>
-                <div style="display: flex; align-items: center; gap: 15px; background: #f0f4f8; border-radius: 8px; overflow: hidden;">
-                    <div style="height: 35px; background: linear-gradient(90deg, #1e72a7, #2c83b9); width: ${larguraPorcentagem}%; transition: width 0.5s ease;"></div>
-                    <span style="font-weight: bold; font-size: 18px; color: #1e72a7; padding-right: 15px; white-space: nowrap;">${total} ${total === 1 ? 'registro' : 'registros'}</span>
-                </div>
+        if (porcentagem > 0) {
+            const inicio = percentualAcumulado;
+            percentualAcumulado += porcentagem;
+            fatiasGradiente.push(`${cor} ${inicio}% ${percentualAcumulado}%`);
+        }
+
+        // Monta a legenda lateral
+        legendaHTML += `
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                <div style="width: 24px; height: 24px; background: ${cor}; border-radius: 4px; flex-shrink: 0;"></div>
+                <span style="font-size: 18px; font-weight: 500; color: #333;">
+                    <strong>${total}</strong> - ${tipo} (${porcentagem.toFixed(0)}%)
+                </span>
             </div>
         `;
     });
+
+    // Renderiza a estrutura da pizza dividida em duas colunas (Gráfico | Legenda)
+    graficoBarras.innerHTML = `
+        <div style="display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap; padding: 20px 0;">
+            <div style="
+                width: 250px; 
+                height: 250px; 
+                border-radius: 50%; 
+                background: conic-gradient(${fatiasGradiente.join(', ')});
+                box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+                flex-shrink: 0;
+            "></div>
+            
+            <div style="flex: 1; min-width: 250px;">
+                ${legendaHTML}
+            </div>
+        </div>
+    `;
 }
 
 // Renderiza a lista de relatos simulando caixas de comentários
