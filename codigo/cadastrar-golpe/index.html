@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Senior Shield - Registrar Golpe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar">
+      <a href="home.html" class="navbar-logo">
+        <img src="" alt="Logo SeniorShield">
+        <span>Senior<strong>Shield</strong></span>
+      </a>
+    
+      <ul class="navbar-links">
+        <li><a href="index.html" class="ativo">Início</a></li>
+        <li><a href="#golpes">Golpes</a></li>
+        <li><a href="home.html#ferramntas">Ferramentas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+    <main class="container-cadastro">
+        
+        <section class="coluna-ilustracao">
+         
+            <p class="texto-chamada">
+                Ajude a conscientizar a comunidade informando o golpe que você sofreu.
+            </p>
+        </section>
+
+        <section class="coluna-formulario">
+            <h2 class="titulo-formulario">Cadastrar Golpe</h2>
+            
+            <form id="form-registrar-golpe">
+                
+                <div class="campo-grupo">
+                    <label for="nome-completo">Nome Completo</label>
+                    <input type="text" id="nome-completo" name="nome-completo" required>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="email">Detalhes do Ocorrido</label>
+                    <textarea id="email" name="email" rows="4" placeholder="Conte resumidamente o que aconteceu..." required></textarea>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="golpe-sofrido">Golpe Sofrido</label>
+                    <select id="golpe-sofrido" name="golpe-sofrido" required>
+                        <option value="" disabled selected hidden></option>
+                        <option value="Fraude de Consumo">fraude de consumo</option>
+                        <option value="Parceiro Virtual">afetivo</option>
+                        <option value="Suposta Autoridade"> false autoridade</option>
+                        <option value="Roubo de Dados">roubo de dados</option>
+                    </select>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="valor-perdido">Valor Perdido</label>
+                    <input type="text" id="valor-perdido" name="valor-perdido" placeholder="R$ 0,00" required>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="data-ocorrencia">Data da Ocorrência</label>
+                    <input type="date" id="data-ocorrencia" name="data-ocorrencia" required>
+                </div>
+
+                <button type="submit" class="botao-registrar">Registrar Golpe</button>
+
+            </form>
+        </section>
+    </main>
+
+    <section id="estatisticas-relatos" class="container-cadastro" style="display: block; margin-top: 50px; padding: 0 40px;">
+        <h2 style="color: #0f3f72; font-size: 32px; margin-bottom: 10px;">Golpes Denunciados pela Comunidade</h2>
+        <p style="font-size: 20px; margin-bottom: 30px;">Veja abaixo quais são as fraudes mais comuns registradas no site.</p>
+
+        <div class="grafico-container" style="background: #fff; padding: 30px; border-radius: 12px; border: 2px solid #e1e8ed; margin-bottom: 4px;">
+            <h3 style="color: #0f3f72; margin-bottom: 20px;">Total de Registros por Tipo</h3>
+            <div id="grafico-barras"></div>
+        </div>
+
+        <div class="comentarios-container" style="background: #fff; padding: 30px; border-radius: 12px; border: 2px solid #e1e8ed; margin-top: 30px;">
+            <h3 style="color: #0f3f72; margin-bottom: 20px;">Relatos Recentes</h3>
+            <div id="lista-comentarios"></div>
+        </div>
+    </section>
+
+    <script src="registro.js"></script>
+</body>
+</html>

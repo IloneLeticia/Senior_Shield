@@ -1,0 +1,28 @@
+{
+  "registro_golpes_sofridos": [
+    {
+      "id_golpe": "1",
+      "nome": "Maria Silva",
+      "tipo_golpe": "Fraude de Consumo",
+      "email": "Recebi uma mensagem no WhatsApp dizendo que um grande supermercado estava dando um cupom de aniversário. Cliquei no link e comprei um produto que nunca chegou.",
+      "valor_perdido": "R$ 150,00",
+      "data_ocorrencia": "2026-06-24"
+    },
+    {
+      "id_golpe": "2",
+      "nome": "Antônio Santos",
+      "tipo_golpe": "Suposta Autoridade",
+      "email": "Um homem ligou fingindo ser o delegado da polícia. Disse que meu neto estava preso por causar um acidente de carro e que eu precisava fazer um Pix urgente para pagar a fiança.",
+      "valor_perdido": "R$ 2.000,00",
+      "data_ocorrencia": "2026-06-25"
+    },
+    {
+      "id_golpe": "3",
+      "nome": "Geraldo Souza",
+      "tipo_golpe": "Roubo de Dados",
+      "email": "Uma pessoa me ligou dizendo ser da central de segurança do banco. Falou que minha conta tinha sido hackeada e pediu para eu confirmar minha senha e meus dados pelo teclado do celular.",
+      "valor_perdido": "R$ 0,00",
+      "data_ocorrencia": "2026-06-26"
+    }
+  ]
+}

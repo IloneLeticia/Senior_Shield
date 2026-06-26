@@ -17,8 +17,14 @@ body {
   top: 0;
   z-index: 100;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  flex-wrap: wrap;
 }
 
+.navbar-logo {
+    margin-right: 0; /* Remove o empurrão para a esquerda */
+    justify-content: center;
+    width: 100%;
+  }
 .navbar-logo {
   display: flex; 
   align-items: center;
@@ -380,4 +386,43 @@ footer {
   .pergunta-texto { font-size: 17px; }
   .btn-opcao { font-size: 16px; padding: 13px 8px; }
   .score-bloco { flex-direction: column; text-align: center; }
+}
+
+/* 2. ADICIONE ESTA MEDIA QUERY NO FINAL DO SEU ARQUIVO (Abaixo de 900px) */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 15px 20px;
+    min-height: auto;
+    flex-direction: column; /* Empilha o Logo e os Links */
+    gap: 15px;
+    text-align: center;
+  }
+
+  .navbar-logo {
+    margin-right: 0; /* Remove o empurrão para a esquerda */
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar-logo img {
+    width: 65px; /* Reduz um pouco o tamanho do logo */
+    height: 65px;
+  }
+
+  .navbar-logo span {
+    font-size: 26px; /* Reduz o título para caber no celular */
+  }
+
+  .navbar-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que os links quebrem linha entre si se faltar espaço */
+    gap: 8px;
+  }
+
+  .navbar-links a {
+    font-size: 18px; /* Diminui a fonte do link sem perder a legibilidade */
+    padding: 8px 16px; /* Reduz o clique sem ficar colado */
+    white-space: normal; /* Permite quebra se o nome for muito grande */
+  }
 }

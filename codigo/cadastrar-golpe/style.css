@@ -1,0 +1,642 @@
+
+  @import url('https://googleapis.com');
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ── CONFIGURAÇÕES GERAIS ── */
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+}
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: #f5f7fa;
+  color: #1a1a2e;
+  overflow-x: hidden;
+  line-height: 1.8; /* Aumentado para facilitar a leitura de blocos de texto */
+  width: 100%;
+  font-size: 20px; /* Fonte base consideravelmente maior para idosos */
+}
+
+/* ── NAVBAR (Limpo, Unificado e Ampliado) ── */
+.navbar {
+  background: #1e72a7;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  min-height: 110px; 
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.navbar-logo {
+  display: flex; 
+  align-items: center;
+  gap: 16px; 
+  text-decoration: none; 
+  margin-right: auto;
+}
+
+.navbar-logo img { 
+  width: 85px; 
+  height: 85px; 
+  object-fit: contain; 
+}
+
+.navbar-logo span { 
+  font-size: 32px; 
+  font-weight: 400; 
+  color: #fff; 
+}
+
+.navbar-logo strong { 
+  font-weight: 800; 
+}
+
+.navbar-links { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  list-style: none; 
+}
+
+.navbar-links a {
+  display: block; 
+  padding: 12px 24px;
+  color: #fff; 
+  text-decoration: none;
+  font-size: 22px; 
+  font-weight: 700; 
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s; 
+  white-space: nowrap;
+}
+
+.navbar-links a:hover, .navbar-links a.ativo {
+  background: rgba(255,255,255,0.24);
+  text-decoration: underline;
+}
+
+/* ── HERO ── */
+.hero {
+background: #3b8abb;
+  padding: 30px 40px; /* Reduzido o tamanho vertical que ocupava a tela */
+  display: flex; 
+  align-items: center;
+  gap: 40px; 
+  justify-content: center;
+  flex-wrap: nowrap; /* Garante que a imagem fique SEMPRE ao lado, sem quebrar linha */
+}
+.hero-texto { max-width: 550px; color: #fff; }
+.hero-badge {
+   display: inline-block;
+  background: #004d80; 
+  color: #fff;
+  font-size: 16px; 
+  font-weight: 700; 
+  letter-spacing: 1px;
+  text-transform: uppercase; 
+  padding: 6px 16px;
+  border-radius: 20px; 
+  margin-bottom: 15px;
+}
+.hero-texto h1 {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: clamp(34px, 5vw, 48px); 
+  font-weight: 700; 
+  line-height: 1.2; 
+  margin-bottom: 15px;
+}
+.hero-texto p { 
+  font-size: 22px; 
+  line-height: 1.7; 
+  opacity: 0.95; 
+}
+
+
+.hero-mascote {
+ width: 220px; /* Reduzido levemente para harmonizar com a seção menor */
+  height: 260px;
+  flex-shrink: 0; /* Impede que a imagem esmague em telas menores */
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+}
+.hero-mascote img { 
+  width: 100%; 
+  height: 100%; 
+  object-fit: contain; 
+}
+ 
+/* Muda a cor dos h2 especificamente dentro da div do texto explicativo */
+#texto_explicativo h2 {
+  color: #1e72a7; /* Azul escuro com excelente contraste para leitura */
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+#texto_explicativo strong{
+
+  color: #004d80;
+}
+/* GRAFICO TESTEEE */
+
+
+#grafico img { 
+  max-width: 100%; 
+  max-height: 100%; 
+  object-fit: contain; /* Mantém a proporção do mascote sem distorcer */
+  display: block;
+}
+/* ── MAIN ── */
+main { 
+  max-width: 1000px; 
+  margin: 0 auto; 
+  padding: 0 24px 72px; 
+  width: 100%;
+}
+
+section { margin-bottom: 56px; }
+
+.sec-label {
+  display: block; font-size: 16px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: #1e72a7; margin: 56px 0 12px;
+}
+.sec-titulo {
+  font-family: 'Libre Baskerville', Georgia, serif;
+  font-size: clamp(28px, 4vw, 36px); font-weight: 700;
+  color: #0f3f72; line-height: 1.3; margin-bottom: 16px;
+}
+.sec-descricao {
+  font-size: 20px; color: #222; line-height: 1.7;
+  margin-bottom: 32px; max-width: 800px;
+}
+
+/* ── FERRAMENTAS (Cards Maiores e Mais Visíveis) ── */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+.tool-card {
+  background: #fff; border-radius: 12px;
+  padding: 26px 22px; text-decoration: none; color: inherit;
+  display: flex; flex-direction: column; gap: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 2px solid #e1e8ed; /* Borda bem visível */
+  transition: box-shadow 0.2s, transform 0.18s;
+}
+.tool-card:hover {
+  box-shadow: 0 8px 24px rgba(30,114,167,0.18);
+  transform: translateY(-2px);
+  border-color: #1e72a7;
+}
+.tool-emoji { font-size: 36px; margin-bottom: 4px; }
+.tool-card h3 { font-size: 22px; font-weight: 700; color: #0f3f72; }
+.tool-card p   { font-size: 18px; color: #333; line-height: 1.6; flex: 1; }
+.tool-arrow   { font-size: 20px; color: #1e72a7; align-self: flex-end; margin-top: 8px; font-weight: bold; }
+
+/* ── FIM / FOOTER ── */
+.fim-pagina {
+  display: block; text-align: center;
+  font-size: 18px; color: #555; padding: 12px 0 48px;
+}
+footer {
+  background: #1e72a7; color: #fff;
+  text-align: center; padding: 40px 20px; font-size: 18px;
+  line-height: 1.6;
+}
+footer strong { color: #fff; font-size: 20px; }
+.footer-links {
+  display: flex; justify-content: center;
+  gap: 24px; margin-top: 16px; flex-wrap: wrap;
+}
+.footer-links a { color: #fff; text-decoration: underline; font-size: 18px; }
+.footer-links a:hover { color: #daeaf8; }
+
+
+/*=========== ACORDEÃO OFICIAL ==========*/
+
+.accordion {
+  background-color: #1e72a7;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 24px; /* Mantido bem grande e destacado */
+  font-weight: 700;
+  cursor: pointer;
+  padding: 24px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.2s;
+}
+
+.active, .accordion:hover {
+  background-color: #2c83b9;
+}
+
+.painel {
+  padding: 24px;
+  margin-top: -8px;
+  margin-bottom: 24px;
+  font-size: 20px; /* Combinando com o tamanho de leitura confortável */
+  background-color: #e4eeff;
+  border-radius: 0 0 8px 8px;
+  border: 2px solid #bcd7e9;
+  border-top: none;
+  display: none;
+  overflow: hidden;
+}
+
+.painel ul li {
+  margin-bottom: 8px;
+}
+
+.accordion:after {
+  content: '\002b';
+  font-size: 34px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-left: 15px;
+  line-height: 1;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+#titulo {
+  text-align: center;
+  font-size: clamp(32px, 6vw, 44px);
+  font-weight: bold;
+  color: #1e72a7;
+  margin-bottom: 20px;
+}
+
+#descricao-generica, #descricao-geral, #fim_pagina {
+  text-align: center;
+  padding: 20px;
+  font-size: 24px; /* Exatamente igual à escala do acordeão principal */
+  color: #10496d;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+#tipos {
+  cursor: pointer;
+  display: flex;
+  color: #10496d;
+  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+/* botão */
+.botão, .botao-tutorial {
+  display: inline-block;
+  text-align: center;
+  max-width: 400px; /* Aumentado para acomodar o texto grande sem quebrar muitas linhas */
+  width: 100%;
+  margin: 20px auto;
+  padding: 16px 28px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 20px; /* Combinando com os textos principais */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.botão:hover, .botao-tutorial:hover {
+  background-color: #19a8b3;
+  outline: 3px solid #051e53;
+}
+
+/* ── CONFIGURAÇÕES RESPONSIVAS (MOBILE) ── */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column; /* Organiza itens verticalmente para não esmagar os textos grandes */
+    padding: 15px 20px;
+    height: auto;
+    gap: 12px;
+  }
+  .navbar-logo {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .navbar-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .navbar-links a {
+    padding: 8px 12px;
+    font-size: 18px;
+  }
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px 60px;
+    gap: 30px;
+  }
+  .hero-texto {
+    max-width: 100%;
+  }
+  .hero-btns {
+    justify-content: center;
+  }
+  .hero-mascote {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+  }
+  .botão, .botao-tutorial {
+    display: block;
+    margin: 20px auto;
+  }
+}
+  /* Estiliza os botões usados ​​para abrir e fechar o painel recolhível */
+  .accordion {
+    background-color: #1e72a7;
+    border-radius: 3px;
+    color: #fff;
+    font-size: large;
+    font-weight: bolder;
+    cursor: pointer;
+    padding-bottom: 8px;
+    padding-top: 28px;
+    width: 100%;
+    text-align: left;
+    border: none;
+  }
+
+  /* Adicione uma cor de fundo ao botão se ele receber clique (adicione a classe .active com JS) e quando você passar o mouse sobre ele (hover) */
+  .active, .accordion:hover {
+    background-color: #2c83b9;
+  }
+
+  /* Estiliza o painel do acordeão, xuxu. Nota: oculto por padrão */
+  .painel {
+    padding: 18px;
+    margin: 12px;
+    font-size: large;
+    background-color: #e4eeff;
+    border-radius: 5px;
+    border-width: 1px;
+    border-color: #bcd7e9;
+    border-style: solid;
+    display: none;
+    overflow: hidden;
+  }
+
+  .accordion:after {
+    content: '\002b'; /*  (+) */
+    font-size: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    float: right;
+    margin-left: 5px;
+  }
+
+  .active:after {
+    content: "\2212"; /* (-) */
+  }
+
+  #titulo {
+    text-align: center;
+    box-sizing: border-box;
+    display: flexbox;
+    font-size: 40px;
+    font-weight: bold;
+    color: #1e72a7;
+  }
+  #descricao-geral {
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    font-size: 18px;
+    color: #10496d;
+    margin-bottom: 30px;
+  }
+  #fim_pagina{
+    text-align: center;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    font-size: 18px;
+    color: #10496d;
+    margin-bottom: 30px;
+
+  }
+  #tipos{
+    display: flex;
+    color: #10496d;
+    text-align: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  /*botão*/
+  .botão{
+  display: block;
+  text-align: center;
+  border-radius: 5px;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+  }
+
+  .botão:hover
+  {
+  background-color: #1dbac5;
+
+  }
+  body {
+      overflow-x: hidden;
+      font-family: 'Poppins', sans-serif;
+      width: 95%;
+      margin: 0 auto;
+      padding: 0;
+      
+  }
+
+/* ==========================================================================
+   ELEMENTOS ADICIONADOS PARA A PÁGINA DE CADASTRO (ACESSIBILIDADE PARA IDOSOS)
+   ========================================================================== */
+
+/* Ajuste no body para ocupar toda a largura da tela sem margens laterais brancas */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Estilização do Topo Azul - Agora mais grosso (padding maior) */
+.navbar-senior {
+    background-color: #1e72a7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 60px; /* Engrossou o cabeçalho */
+    box-sizing: border-box;
+    width: 100%;
+    position: relative; /* Necessário para centralizar o título */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+/* Logo maior */
+.logo-shield {
+    height: 80px; 
+    width: auto;
+}
+
+/* Título Centralizado e Maior */
+.brand-name {
+    color: white;
+    font-size: 46px; /* Bem maior */
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    position: absolute; /* Solta o texto do fluxo normal... */
+    left: 50%; /* ...e joga para o meio da tela */
+    transform: translateX(-50%); /* Centraliza perfeitamente o eixo */
+    width: max-content;
+}
+
+/* Ícone do Menu Hambúrguer (mais grosso também) */
+.menu-hamburguer {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.menu-hamburguer span {
+    background-color: white;
+    height: 6px; /* Linhas mais grossas */
+    width: 45px;
+    border-radius: 3px;
+}
+
+/* Layout das Duas Colunas */
+.container-cadastro {
+    display: flex;
+    max-width: 1600px;
+    margin: 60px auto;
+    padding: 0 40px;
+    justify-content: space-around;
+    align-items: flex-start; /* Alinha pelo topo para não ficar voando */
+    flex-wrap: wrap; 
+    gap: 60px; 
+}
+
+/* Coluna Esquerda: Bonequinho e Chamada */
+.coluna-ilustracao {
+    flex: 1;
+    min-width: 400px;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* Bonequinho Maior */
+.imagem-netinho {
+    width: 100%;
+    max-width: 450px; 
+    height: auto;
+}
+
+.texto-chamada {
+    font-size: 32px; /* Fonte super visível */
+    color: #10496d;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-top: 25px;
+}
+
+/* Coluna Direita: Caixa de Entrada do Formulário */
+.coluna-formulario {
+    flex: 1;
+    min-width: 400px;
+    max-width: 650px; /* Formulário mais largo */
+    font-family: 'Poppins', sans-serif;
+}
+
+.titulo-formulario {
+    color: #1e72a7;
+    font-size: 42px; /* Título BEM maior */
+    margin-bottom: 35px;
+    font-weight: bold;
+}
+
+/* Grupos de Inputs */
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.campo-grupo label {
+    color: #333;
+    font-size: 24px; /* Labels super legíveis */
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+/* Customização das caixas de texto - Área de clique maior */
+.campo-grupo input, 
+.campo-grupo select {
+    border: 3px solid #bcd7e9; /* Borda mais grossa pra dar contraste */
+    border-radius: 10px;
+    padding: 18px; /* Caixa de texto mais "gordinha" */
+    font-size: 22px; /* Texto digitado bem grande */
+    background-color: #fcfcfc;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.campo-grupo input:focus, 
+.campo-grupo select:focus {
+    border-color: #1e72a7;
+}
+
+/* Botão de Envio Oval Azul - Gigante e Chamativo */
+.botao-registrar {
+    background-color: #1e72a7;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 22px 0;
+    width: 100%;
+    font-size: 28px; /* Texto do botão BEM grande */
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.botao-registrar:hover {
+    background-color: #16567e;
+}
