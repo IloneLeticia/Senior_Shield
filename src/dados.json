@@ -429,6 +429,15 @@
       "valor_perdido": "1222,00",
       "data_ocorrencia": "2026-12-03",
       "id": "PwVAZ831Pyc"
+    },
+    {
+      "id_golpe": "6",
+      "nome": "Niniu",
+      "tipo_golpe": "Roubo de Dados",
+      "email": "Clonaram meu cartao de credito",
+      "valor_perdido": "1000,00",
+      "data_ocorrencia": "2026-06-26",
+      "id": "SGcgo1nYExc"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

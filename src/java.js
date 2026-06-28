@@ -309,24 +309,18 @@ function responder(opcao) {
   const chatBody = document.getElementById('chat-mensagens');
   const chatOpcoes = document.getElementById('chat-opcoes');
   
-  // 1. Mostrar a mensagem que o usuário escolheu
   chatBody.innerHTML += `<div class="mensagem usuario">${opcao}</div>`;
-  
-  // Esconder os botões enquanto o Netinho "digita"
   chatOpcoes.style.display = 'none';
   chatBody.scrollTop = chatBody.scrollHeight;
 
-  // 2. Simular um tempo de resposta (1 segundo) para parecer mais humano
   setTimeout(() => {
     let respostaNetinho = "";
     
-    // Se escolheu ver ferramentas, vai direto para a função do menu de ferramentas
     if (opcao === 'Ver ferramentas') {
         mostrarMenuFerramentas();
-        return; // Sai da função para não criar conflito com os botões abaixo
+        return; 
     }
 
-    // Lógica de diálogos acolhedores
     if (opcao === 'Estou assustado') {
       respostaNetinho = "Respire fundo. A internet pode ser intimidante, mas você não precisa enfrentar isso só. O que acha de fazermos um checklist rápido para ver se está tudo bem com sua segurança?";
       chatOpcoes.innerHTML = `
@@ -335,7 +329,7 @@ function responder(opcao) {
       `;
     } 
     else if (opcao === 'Caí em um golpe') {
-      respostaNetinho = "Sinto muito por isso. A culpa nunca é sua, os criminosos estudam muito para enganar as pessoas. Vamos tomar as medidas necessárias com calma? Você pode registrar o golpe para alertar outros ou gerar um boletim.";
+      respostaNetinho = "Sinto muito por isso. A culpa nunca é sua, os criminosos estudam muito para enganar as pessoas. Vamos tomar as medidas necessárias com calma? Você pode registrar o golpe para alertar outros ou gerar um boletim de ocorrência.";
       chatOpcoes.innerHTML = `
         <button onclick="window.location.href='golpe/cadastrar_golpe.html'">Registrar Golpe</button>
         <button onclick="window.location.href='boletim/index.html'">Gerar Boletim</button>
@@ -361,17 +355,114 @@ function responder(opcao) {
     // Adiciona a resposta do Netinho na tela
     chatBody.innerHTML += `<div class="mensagem netinho">${respostaNetinho}</div>`;
     
-    // Mostra os novos botões na tela
-    chatOpcoes.style.display = 'flex';
+    // --- MÁGICA DA VOZ AQUI ---
+    falar(respostaNetinho); 
     
-    // Rola para o fim da conversa
+    chatOpcoes.style.display = 'flex';
     chatBody.scrollTop = chatBody.scrollHeight;
     
-  }, 1000); // Fim do atraso de 1 segundo
+  }, 1000);
 }
 
 // Inicializa o chat quando o site terminar de carregar
 document.addEventListener("DOMContentLoaded", () => {
     mostrarMenuInicial();
 });
- 
+// === FUNÇÃO DE VOZ (SÓ FALA SE CLICAR) ===
+function falar(texto) {
+    if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel();
+        const msg = new SpeechSynthesisUtterance();
+        msg.text = texto;
+        msg.lang = 'pt-BR';
+        window.speechSynthesis.speak(msg);
+    }
+}
+
+// === LÓGICA DO CHAT ===
+window.toggleChat = function() {
+  const chat = document.getElementById('netinho-chat-window');
+  const chatBody = document.getElementById('chat-mensagens');
+  chat.style.display = chat.style.display === 'none' ? 'flex' : 'none';
+  if(chat.style.display === 'flex') chatBody.scrollTop = chatBody.scrollHeight;
+};
+
+function mostrarMenuInicial() {
+  const chatOpcoes = document.getElementById('chat-opcoes');
+  chatOpcoes.innerHTML = `
+    <button onclick="responder('Estou assustado')">Estou assustado</button>
+    <button onclick="responder('Caí em um golpe')">Caí em um golpe, preciso de ajuda</button>
+    <button onclick="responder('Ver ferramentas')">Ver ferramentas de proteção</button>
+    <button onclick="responder('Só quero conversar')">Só quero conversar</button>
+  `;
+  chatOpcoes.style.display = 'flex';
+}
+
+function mostrarMenuFerramentas() {
+  const chatBody = document.getElementById('chat-mensagens');
+  const chatOpcoes = document.getElementById('chat-opcoes');
+  chatBody.innerHTML += `<div class="mensagem netinho">Aqui estão as ferramentas que temos para te proteger:</div>`;
+  chatOpcoes.innerHTML = `
+    <button onclick="window.location.href='checklist/checklist.html'">Checklist de Risco</button>
+    <button onclick="window.location.href='golpe/cadastrar_golpe.html'">Registrar Golpe</button>
+    <button onclick="window.location.href='boletim/index.html'">Gerar Boletim</button>
+    <button onclick="window.location.href='golpe_tube/golpetube_main.html'">Assistir no Golpe Tube</button>
+    <button onclick="voltarAoInicio()" style="background: #e4eeff; border-color: #0f3f72;">⬅ Voltar ao início</button>
+  `;
+  chatOpcoes.style.display = 'flex';
+  chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function voltarAoInicio() {
+    const chatBody = document.getElementById('chat-mensagens');
+    chatBody.innerHTML += `<div class="mensagem usuario">Voltar ao início</div>`;
+    chatBody.innerHTML += `<div class="mensagem netinho">Como posso te ajudar agora?</div>`;
+    mostrarMenuInicial();
+    chatBody.scrollTop = chatBody.scrollHeight;
+}
+
+function responder(opcao) {
+  const chatBody = document.getElementById('chat-mensagens');
+  const chatOpcoes = document.getElementById('chat-opcoes');
+  
+  chatBody.innerHTML += `<div class="mensagem usuario">${opcao}</div>`;
+  chatOpcoes.style.display = 'none';
+  chatBody.scrollTop = chatBody.scrollHeight;
+
+  setTimeout(() => {
+    let resposta = "";
+    
+    if (opcao === 'Ver ferramentas') { mostrarMenuFerramentas(); return; }
+
+    if (opcao === 'Estou assustado') {
+      resposta = "Respire fundo. Você não está sozinho. O que acha de fazermos um checklist rápido para ver se está tudo bem com sua segurança?";
+      chatOpcoes.innerHTML = `<button onclick="window.location.href='checklist/checklist.html'">Fazer Checklist</button><button onclick="voltarAoInicio()">Voltar ao início</button>`;
+    } 
+    else if (opcao === 'Caí em um golpe') {
+      resposta = "Sinto muito. A culpa nunca é sua. Vamos tomar as medidas necessárias com calma? Você pode registrar o golpe ou boletim de ocorrência.";
+      chatOpcoes.innerHTML = `<button onclick="window.location.href='golpe/cadastrar_golpe.html'">Registrar Golpe</button><button onclick="window.location.href='boletim/index.html'">Gerar Boletim</button><button onclick="voltarAoInicio()">Voltar ao início</button>`;
+    }
+    else if (opcao === 'Só quero conversar') {
+      resposta = "Adoro uma boa conversa! Como está sendo o seu dia hoje?";
+      chatOpcoes.innerHTML = `<button onclick="responder('Está sendo difícil')">Está difícil</button><button onclick="responder('Está tudo bem')">Está tudo bem</button><button onclick="voltarAoInicio()">Voltar ao início</button>`;
+    }
+    else if (opcao === 'Está sendo difícil' || opcao === 'Está tudo bem') {
+        resposta = "Entendo perfeitamente. Lembre-se que estou aqui sempre que precisar. Quer conhecer alguma ferramenta para se sentir mais seguro?";
+        chatOpcoes.innerHTML = `<button onclick="mostrarMenuFerramentas()">Sim, quero ver</button><button onclick="voltarAoInicio()">Voltar ao início</button>`;
+    }
+
+    // Adiciona mensagem + botão de ouvir
+    chatBody.innerHTML += `
+        <div class="mensagem netinho">
+            ${resposta}
+            <button onclick="falar('${resposta.replace(/'/g, "")}')" style="margin-top:10px; display:block; background:#1e72a7; color:white; border:none; padding:5px 10px; border-radius:5px; cursor:pointer;">
+                🔊 Ouvir mensagem
+            </button>
+        </div>`;
+    
+    chatOpcoes.style.display = 'flex';
+    chatBody.scrollTop = chatBody.scrollHeight;
+  }, 1000);
+}
+
+document.addEventListener("DOMContentLoaded", () => mostrarMenuInicial());

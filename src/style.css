@@ -148,7 +148,7 @@ body {
   width: 220px; 
   height: 260px;
   flex-shrink: 0; 
- width: 420px; /* Reduzido levemente para harmonizar com a seção menor */
+ width: 520px; /* Reduzido levemente para harmonizar com a seção menor */
   height: 360px;
   flex-shrink: 0; /* Impede que a imagem esmague em telas menores */
   display: flex;
@@ -536,7 +536,7 @@ footer strong {
 
 .chat-body {
   padding: 20px;
-  height: 300px;
+  height: 350px;
   overflow-y: auto;
   background: #f5f7fa;
   display: flex;
