@@ -11,9 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btnPDF.addEventListener("click", baixarPDF);
   btnLimpar.addEventListener("click", limparFormulario);
 
-  /* ===================== MÁSCARA DE VALOR =====================
-     CORREÇÃO: a versão anterior tinha bug ao apagar caracteres.
-     Agora só formata se houver dígitos, evitando "R$ 0,00" travado. */
+  /* ===================== MÁSCARA DE VALOR ===================== */
   campoValor.addEventListener("input", function () {
     let apenasDigitos = this.value.replace(/\D/g, "");
 
@@ -39,10 +37,10 @@ async function gerarBoletim(event) {
   const valor     = document.getElementById("valor");
   const descricao = document.getElementById("descricao");
 
-  /* MELHORIA: limpa marcações de erro anteriores */
+  /* Limpa marcações de erro anteriores */
   [nome, data, tipoGolpe, valor, descricao].forEach(c => c.classList.remove("campo-erro"));
 
-  /* MELHORIA: valida cada campo individualmente e marca em vermelho */
+  /* Valida cada campo individualmente */
   let valido = true;
   if (!nome.value.trim())          { nome.classList.add("campo-erro");      valido = false; }
   if (!data.value)                 { data.classList.add("campo-erro");      valido = false; }
@@ -55,7 +53,7 @@ async function gerarBoletim(event) {
     return;
   }
 
-  /* MELHORIA: feedback visual no botão enquanto gera */
+  /* Feedback visual no botão enquanto gera */
   const btnGerar = document.getElementById("btnGerar");
   btnGerar.disabled = true;
   btnGerar.innerHTML = '<i class="bi bi-hourglass-split"></i> Gerando...';
@@ -77,7 +75,7 @@ Solicito que as medidas cabíveis sejam tomadas pelas autoridades competentes.`;
   /* MOSTRAR TEXTO */
   document.getElementById("textoBoletim").textContent = texto;
 
-  /* MELHORIA: esconde instrução inicial e mostra botões e link da delegacia */
+  /* Esconde instrução inicial e mostra botões e link da delegacia */
   const instrucao = document.getElementById("instrucaoResultado");
   if (instrucao) instrucao.style.display = "none";
 
@@ -99,7 +97,6 @@ Solicito que as medidas cabíveis sejam tomadas pelas autoridades competentes.`;
       })
     });
   } catch (erro) {
-    /* Falha silenciosa — o JSON Server pode não estar rodando em produção */
     console.log("JSON Server não disponível:", erro.message);
   }
 
@@ -143,7 +140,6 @@ function baixarPDF() {
   const { jsPDF } = window.jspdf;
   const doc = new jsPDF();
 
-  /* MELHORIA: adiciona título ao PDF */
   doc.setFontSize(18);
   doc.setTextColor(21, 101, 169);
   doc.text("Boletim de Ocorrência — SeniorShield", 10, 15);
@@ -151,7 +147,6 @@ function baixarPDF() {
   doc.setFontSize(13);
   doc.setTextColor(30, 30, 30);
 
-  /* Divide o texto em linhas que cabem na página */
   const linhas = doc.splitTextToSize(texto, 180);
   doc.text(linhas, 10, 30);
 
@@ -165,10 +160,10 @@ function limparFormulario() {
   );
   if (!confirmado) return;
 
-  /* Limpa os valores dos campos */
+  /* Limpa os valores dos campos trazendo para o estado original do HTML */
   document.getElementById("nome").value      = "";
   document.getElementById("data").value      = "";
-  document.getElementById("tipoGolpe").value = "";
+  document.getElementById("tipoGolpe").value = ""; /* Reseta para a opção inicial vazia do HTML */
   document.getElementById("valor").value     = "";
   document.getElementById("descricao").value = "";
 
@@ -186,6 +181,6 @@ function limparFormulario() {
   const instrucao = document.getElementById("instrucaoResultado");
   if (instrucao) instrucao.style.display = "";
 
-  /* Foca no primeiro campo para facilitar novo preenchimento */
+  /* Foca no primeiro campo */
   document.getElementById("nome").focus();
 }
