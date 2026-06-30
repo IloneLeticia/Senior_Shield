@@ -94,7 +94,7 @@ function renderizarGrafico(dados) {
 }
 
 // Renderiza a lista de relatos simulando caixas de comentários
-f// Variável global para controlar a página atual do carrossel
+// Variável global para controlar a página atual do carrossel
 let indexCarrosselAtual = 0;
 let relatosInvertidosGlobal = [];
 
