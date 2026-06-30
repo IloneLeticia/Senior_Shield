@@ -86,7 +86,7 @@ header h1 {
     font-size: 28px;
     font-weight: 700;
     text-align: center;
-    color: white;
+    color: #1e72a7;
     padding: 16px 0;
 }
 
@@ -95,6 +95,7 @@ header h1 .shield {
     vertical-align: middle;
     color: #1e72a7;
 }
+
 
 #introducao {
     text-align: center;

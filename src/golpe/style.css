@@ -164,8 +164,10 @@ html, body {
     font-weight: 500;
 }
 
+
 .campo-grupo input, 
-.campo-grupo select {
+.campo-grupo select,
+.campo-grupo textarea {
     border: 3px solid #bcd7e9; 
     border-radius: 10px;
     padding: 18px; 
@@ -174,10 +176,13 @@ html, body {
     outline: none;
     box-sizing: border-box;
     width: 100%;
+    font-family: 'Poppins', sans-serif; 
+    resize: vertical;
 }
 
 .campo-grupo input:focus, 
-.campo-grupo select:focus {
+.campo-grupo select:focus,
+.campo-grupo textarea:focus {
     border-color: #1e72a7;
 }
 
