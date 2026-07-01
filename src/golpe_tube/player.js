@@ -83,13 +83,13 @@ console.log(localStorage.getItem("videoCriadorSelecionado"));
 
     // Botão voltar
     document.getElementById("btn-video-back").addEventListener("click", function () {
-        window.location.href = "/codigo/golpe_tube/videos.html";
+        window.location.href = "/src/golpe_tube/videos.html";
     });
 
 
     // Botão home
     document.getElementById("btn-video-home").addEventListener("click", function () {
-        window.location.href = "/codigo/golpe_tube/golpetube_main.html";
+        window.location.href = "/src/golpe_tube/videos.html";
     });
 
 });
