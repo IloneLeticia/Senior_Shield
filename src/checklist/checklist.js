@@ -33,7 +33,7 @@ var DADOS = {
     {
       "id": "6",
       "categoria": "Roubo de Dados",
-      "emoji": "🪪",
+      "emoji": "📝",
       "texto": "Alguém pediu seus dados pessoais (CPF, RG, data de nascimento) por telefone ou mensagem sem você ter iniciado o contato?"
     },
     {
