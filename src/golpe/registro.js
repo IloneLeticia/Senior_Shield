@@ -2,7 +2,7 @@ const formulario = document.getElementById('form-registrar-golpe');
 
 // Função para buscar os dados do servidor e renderizar o gráfico e relatos
 function carregarEstatisticasERelatos() {
-    fetch('http://localhost:3000/registro_golpes_sofridos')
+    fetch('https://senior-shield.onrender.com/registro_golpes_sofridos')
         .then(response => response.json())
         .then(golpes => {
             renderizarGrafico(golpes);

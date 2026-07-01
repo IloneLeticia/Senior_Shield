@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     videoGrid.innerHTML = '';
 
     // Carrega os nomes das categorias para as tags
-    fetch('http://localhost:3000/categorias')
+   fetch('https://senior-shield.onrender.com/categorias')
         .then(res => res.json())
         .then(categorias => {
             filtrosAtivos.forEach(catId => {
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(err => console.error('Erro ao buscar categorias:', err));
 
   // Carrega a listagem de vídeos por categoria
-    fetch('http://localhost:3000/videosPorCategoria')
+   fetch('https://senior-shield.onrender.com/videosPorCategoria')
         .then(res => res.json())
         .then(videosPorCategoria => {
             filtrosAtivos.forEach(catId => {

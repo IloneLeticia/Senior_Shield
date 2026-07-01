@@ -51,7 +51,7 @@ for (let i = 0; i < acc.length; i++) {
 
 // FETCH DOS GOLPEs
 
-fetch('http://localhost:3000/principais_tipos_de_golpe')
+fetch('https://senior-shield.onrender.com/principais_tipos_de_golpe')
   .then(response => response.json())
   .then(golpes => {
 
@@ -88,7 +88,7 @@ fetch('http://localhost:3000/principais_tipos_de_golpe')
         evento.preventDefault(); 
 
         // Faz o fetch direto na chave de vídeos por categoria do seu servidor
-        fetch('http://localhost:3000/videosPorCategoria')
+        fetch('https://senior-shield.onrender.com/videosPorCategoria')
           .then(res => res.json())
           .then(categoriasDeVideo => {
             
@@ -153,7 +153,7 @@ fetch('http://localhost:3000/principais_tipos_de_golpe')
 
 // FETCH DAS DESCRIÇÕES
 
-fetch('http://localhost:3000/descricoes')
+fetch('https://senior-shield.onrender.com/descricoes')
   .then(response => response.json())
   .then(descricao => {
 
@@ -166,7 +166,7 @@ fetch('http://localhost:3000/descricoes')
   })
   .catch(error => console.error('Erro ao carregar descrições:', error));
   function carregarEstatisticasERelatos() {
-    fetch('http://localhost:3000/registro_golpes_sofridos')
+    fetch('https://senior-shield.onrender.com/registro_golpes_sofridos')
         .then(response => response.json())
         .then(golpes => {
             renderizarGrafico(golpes);
