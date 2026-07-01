@@ -187,7 +187,7 @@ section {
 }
 
 .sec-titulo {
-  font-family: 'Libre Baskerville', Georgia, serif;
+  font-family: 'Poppins', Arial, sans-serif;
   font-size: clamp(28px, 4vw, 36px); 
   font-weight: 700;
   color: #0f3f72; 
@@ -249,8 +249,19 @@ section {
   border-color: #1e72a7;
 }
 
+.tool-card h3 { 
+  font-size: 22px; 
+  font-weight: 700; 
+  color: #0f3f72; 
+  display: flex;          
+  align-items: center;   
+  gap: 10px;              
+}
+
+.tool-card h3 svg {
+  flex-shrink: 0;         /* Impede que o ícone amasse */
+}
 .tool-emoji { font-size: 36px; margin-bottom: 4px; }
-.tool-card h3 { font-size: 22px; font-weight: 700; color: #0f3f72; }
 .tool-card p   { font-size: 18px; color: #333; line-height: 1.6; flex: 1; }
 .tool-arrow   { font-size: 20px; color: #1e72a7; align-self: flex-end; margin-top: 8px; font-weight: bold; }
 
