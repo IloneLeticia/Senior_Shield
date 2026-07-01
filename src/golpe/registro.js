@@ -144,3 +144,42 @@ function renderizarComentarios(dados) {
 
 // Executa automaticamente ao carregar a página
 carregarEstatisticasERelatos();
+
+// Cadastro de novo relato
+if (formulario) {
+    formulario.addEventListener("submit", async function (e) {
+        e.preventDefault();
+
+        const novoGolpe = {
+            nome: document.getElementById("nome-completo").value,
+            detalhes: document.getElementById("detalhes-ocorrido").value,
+            tipo_golpe: document.getElementById("golpe-sofrido").value,
+            data_ocorrencia: document.getElementById("data-ocorrencia").value
+        };
+
+        try {
+            const resposta = await fetch("https://senior-shield.onrender.com/registro_golpes_sofridos", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(novoGolpe)
+            });
+
+            if (!resposta.ok) {
+                throw new Error("Erro ao cadastrar.");
+            }
+
+            alert("Relato enviado com sucesso!");
+
+            formulario.reset();
+
+            // Atualiza gráfico e comentários
+            carregarEstatisticasERelatos();
+
+        } catch (erro) {
+            console.error(erro);
+            alert("Não foi possível enviar o relato.");
+        }
+    });
+}
