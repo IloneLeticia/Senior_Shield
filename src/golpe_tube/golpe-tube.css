@@ -25,7 +25,7 @@ html, body {
     padding: 0 40px;
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Logo na esquerda, links na direita */
+    justify-content: space-between;
     min-height: 110px; 
     position: sticky;
     top: 0;
@@ -96,7 +96,6 @@ header h1 .shield {
     color: #1e72a7;
 }
 
-
 #introducao {
     text-align: center;
     margin: 0;
@@ -132,7 +131,7 @@ header h1 .shield {
     margin-bottom: 20px;
 }
 
-/* --- 5. SEÇÃO UNIFICADA DE BOTÕES (REDUÇÃO DE REDUNDÂNCIAS) --- */
+/* --- 5. SEÇÃO UNIFICADA DE BOTÕES --- */
 header nav .btn-header, 
 #btn-confirmar-selecao, 
 #btn-nav-home {
@@ -176,10 +175,10 @@ header nav .btn-header:hover,
     box-shadow: #d2d2eb 0px 5px 15px;
 }
 
-/* --- 6. CHECKBOXES DE TAGS (ESTILO COM EMOJI) --- */
+/* --- 6. CHECKBOXES DE TAGS --- */
 .tags input[type="checkbox"] {
     appearance: none;
-    width: 30px; /* Alterado de % para fixo para não distorcer em telas grandes */
+    width: 30px;
     height: 30px;
     background-color: #ffffff;
     border: 2px solid #1b18ce;
@@ -352,6 +351,10 @@ header nav .btn-header:hover,
    10. MEDIA QUERIES (RESPONSIVIDADE UNIFICADA)
    ========================================================================== */
 @media (max-width: 900px) {
+    html, body {
+        font-size: 16px; /* Ajusta a fonte base para não quebrar o layout no mobile */
+    }
+
     .navbar {
         padding: 15px 20px;
         min-height: auto;
@@ -371,7 +374,7 @@ header nav .btn-header:hover,
     }
 
     .navbar-logo span {
-        font-size: 26px; 
+        font-size: 24px; 
     }
 
     .navbar-links {
@@ -391,5 +394,17 @@ header nav .btn-header:hover,
         margin: 15px 10px;
         border: 5px solid #2356a3; /* Diminui a borda grossa no mobile */
         padding: 10px;
+    }
+
+    #videos-container {
+        border: 5px inset #2d86bd; /* Reduz a borda de 20px para não esmagar conteúdo */
+        margin: 5px;
+    }
+
+    #video-player {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100% !important;
+        height: auto !important;
     }
 }

@@ -14,5 +14,5 @@ document.getElementById('btn-confirmar-selecao').addEventListener('click', () =>
 
     localStorage.setItem('categoriasFiltro', JSON.stringify(categoriasSelecionadas));
 
-    window.location.href = '/src/golpe_tube/videos.html';
+    window.location.href = 'golpe_tube/videos.html';
 });
