@@ -14,6 +14,7 @@ document.getElementById("texto_explicativo").innerHTML = `<section class="intro-
       <li><strong>Assista e aprenda:</strong> No menu <strong>Golpe Tube</strong>, temos vídeos curtos e explicativos que mostram os golpes acontecendo na prática.</li>
       <li><strong>Faça um teste:</strong> Está na dúvida se uma mensagem ou ligação é falsa? Use o nosso <strong>Checklist de Risco</strong> para avaliar a situação em poucos minutos.</li>
       <li><strong>Caiu em um golpe? Nós te ajudamos:</strong> Não tenha vergonha, isso pode acontecer com qualquer um. Se você foi vítima de uma fraude, use a página <strong>Registrar Golpe</strong> para nos contar o que aconteceu e alertar outros idosos. Você também pode usar o nosso <strong>Gerador de Boletim</strong> para criar um texto prontinho com a sua denúncia para enviar à Delegacia Virtual de forma simples.</li>
+      <li><strong>Fale com o Netinho:</strong> Precisa de uma ajuda rápida ou quer apenas conversar? No cantinho inferior direito da tela, clique no ícone do nosso assistente virtual. Ele funciona como um guia direto e interativo, te indicando caminhos e tirando dúvidas de forma simples, sem enrolação.</li>
     </ol>
   </div>
 </section>`;
