@@ -1,41 +1,29 @@
 # Introdução
 
 ## Problema
->De acordo com a pesquisa feita no estado de São Paulo pela Fundação Seade (março/2026), cerca de 68% dos idosos se sentem vulneráveis a golpes online, esse dado é superior à média geral da pesquisa. Nesse contexto, é importante ressaltar a importância da busca pela segurança dos idosos, especialmente em um cenário de crescente digitalização de serviços financeiros, comunicação e acesso à informação.
->O problema dos golpes digitais direcionados a idosos está relacionado a uma combinação de fatores, como a menor familiaridade com tecnologias digitais, dificuldades na identificação de fraudes e a atuação cada vez mais elaborada de criminosos virtuais. Golpes como falsos contatos de familiares, comunicações fraudulentas em nome de instituições financeiras e links maliciosos são frequentemente utilizados para explorar a confiança e o senso de urgência desse público.
->Além disso, o uso de informações muito técnicas acabam se tornando inacessíveis para o idoso identificar e reagir a essas situações. Em diversos casos, os idosos se sentem constrangidos em relatar o ocorrido e acabam demorando em buscar ajuda.
->Esse problema ocorre em um contexto amplo, envolvendo o uso cotidiano de tecnologias como smartphones, aplicativos de mensagens, redes sociais e serviços bancários digitais.
->A ausência de orientação adequada e de suporte imediato em momentos críticos evidencia a falta de segurança digital e como é comunicada e operacionalizada para esse público específico.
+O avanço acelerado da transformação digital trouxe facilidades para o cotidiano, mas também ampliou a vulnerabilidade de perfis específicos na internet. De acordo com dados da Fundação Seade (março/2026), cerca de 68% dos idosos no estado de São Paulo se sentem vulneráveis a golpes online — um índice significativamente superior à média geral da população. Esse cenário é agravado pela migração em massa de serviços financeiros, canais de comunicação e acesso à informação para o ambiente virtual.
 
+O cerne do problema reside em uma combinação de fatores: a menor familiaridade dessa parcela da população com as nuances tecnológicas, as dificuldades naturais na identificação de fraudes sofisticadas e a atuação cada vez mais estratégica de criminosos virtuais. Abordagens baseadas em falsos contatos de familiares (clonagem de aplicativos de mensagem), comunicações fraudulentas em nome de bancos e o envio de links maliciosos exploram diretamente a boa-fé e o senso de urgência do público idoso.
 
-
-
-
-
-
+Ademais, a maioria das orientações de segurança digital disponíveis utiliza termos excessivamente técnicos, tornando-se inacessível para quem precisa de clareza. O impacto psicológico também é um obstáculo: por constrangimento ou medo de julgamentos, muitas vítimas idosas omitem o ocorrido e adiam a busca por suporte técnico ou legal, o que atrasa a contenção dos danos.
 
 ## Objetivos
+O objetivo geral deste projeto é desenvolver uma solução de software (o **SeniorShield**) projetada especificamente para mitigar os riscos de fraudes digitais contra a terceira idade. 
 
->O objetivo do projeto é desenvolver um software capaz de solucionar o problema citado acima. Nossa ideia é promover informações que sejam acessíveis para o usuário, de forma a mantê-los informados sobre como funcionam os golpes digitais, qual é a solução inicial para se precaver, caso seja uma vítima, informar quais passos devem ser seguidos. 
-
-
-
-
-
+Como objetivos específicos, a plataforma visa:
+*   Promover e centralizar informações preventivas em uma linguagem totalmente acessível e livre de jargões técnicos.
+*   Capacitar o usuário idoso a reconhecer a lógica e o funcionamento dos golpes digitais mais comuns.
+*   Fornecer um plano de ação claro, prático e imediato com os passos necessários para resposta e denúncia caso o usuário já tenha sido vítima de uma fraude.
 
 ## Justificativa
+A relevância deste projeto se justifica pelo descompasso entre o crescimento da inclusão digital dos idosos e a falta de ferramentas de proteção adaptadas a eles. Com a popularização de smartphones, redes sociais e aplicativos bancários, a inserção desse público no ecossistema digital ocorreu de forma abrupta, muitas vezes sem uma rede de suporte ou letramento digital voltado para a segurança.
 
- >A importância do aplicativo se justifica pelo crescimento significativo dos golpes digitais, alinhados com o  aumento da inclusão digital de idosos. Com a popularização de smartphones, aplicativos bancários e até mesmo as redes sociais, os idosos passaram a utilizar mais a tecnologia no dia a dia, e muitas das vezes sem o suporte necessário para lidar com os riscos virtuais. 
->Logo, é relevante o desenvolvimento de uma solução que priorize a acessibilidade da informação, utilizando linguagem simples e orientações práticas. A escolha de focar na conscientização e orientação imediata se deve à necessidade de fornecer ao usuário autonomia e segurança no ambiente digital.
-
-
-
-
-
+Dessa forma, desenvolver uma aplicação que priorize a acessibilidade da informação — por meio de uma interface limpa, linguagem simples e orientações interativas — torna-se essencial. A escolha por focar em conscientização contextualizada e suporte imediato (como ferramentas de diagnóstico e geradores de boletins) visa devolver ao idoso sua autonomia, garantindo que ele navegue na internet com segurança e dignidade.
 
 ## Público-Alvo
->O público-alvo da aplicação são idosos que utilizam tecnologias digitais no seu cotidiano, como smartphones, aplicativos de mensagens (ex: WhatsApp), redes sociais e serviços bancários online.
+O público-alvo principal da aplicação é composto por **idosos (pessoas a partir de 60 anos)** que utilizam tecnologias digitais em sua rotina diária para comunicação pessoal, entretenimento ou serviços essenciais (como movimentações bancárias e consultas de saúde).
 
->Em geral, estamos focando em usuários que possuem conhecimento básico ou intermediário em tecnologia, e que utilizam dispositivos principalmente para comunicação e acesso a serviços essenciais. No entanto, possuem dificuldades na identificação de fraudes digitais. 
-
-
+O perfil do usuário focado engloba:
+*   **Nível tecnológico:** Conhecimento básico a intermediário no manuseio de smartphones e aplicativos populares (ex: WhatsApp).
+*   **Comportamento:** Utilizam a tecnologia de forma funcional, mas apresentam dificuldades para diferenciar interações legítimas de engenharia social e fraudes digitais.
+*   **Público secundário:** Cuidadores, familiares e redes de apoio que buscam ferramentas confiáveis para auxiliar na proteção digital de seus parentes idosos.

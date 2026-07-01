@@ -23,12 +23,32 @@
   </header>
     <main class="container-cadastro">
         
-        <section class="coluna-ilustracao">
-            <img src="../img/netinho.png" alt="Netinho dando joinha" class="imagem-netinho">
-            <p class="texto-chamada">
-                Ajude a conscientizar a comunidade informando o golpe que você sofreu.
-            </p>
-        </section>
+      <section class="coluna-ilustracao" style="font-size: 22px;">
+    
+    <p class="texto-chamada" style="margin-bottom: 20px; font-size: 22px;">
+        Ajude a conscientizar a nossa comunidade informando o golpe que você sofreu. O seu relato é fundamental para proteger outras pessoas e evitar novas vítimas.
+    </p>
+
+    <p style="margin-bottom: 10px; font-weight: bold; color: #0f3f72; font-size: 22px;">
+        Para cadastrar a sua denúncia com sucesso, siga o passo a passo abaixo:
+    </p>
+
+    <ul style="list-style-type: none; padding: 0; margin: 0; line-height: 1.6; font-size: 22px;">
+        <li style="margin-bottom: 12px;">
+            <strong style="color:#215892 ;">1. Identificação:</strong> Insira o seu nome completo ou, se preferir manter a sua privacidade, utilize um apelido de sua preferência.
+        </li>
+        <li style="margin-bottom: 12px;">
+            <strong style="color:#215892;">2. Detalhes do Ocorrido:</strong> Escreva detalhadamente como o golpe aconteceu, incluindo todas as informações que você conseguir se lembrar sobre a abordagem.
+        </li>
+        <li style="margin-bottom: 12px;">
+            <strong style="color:#215892;">3. Tipo de Golpe:</strong> Selecione a categoria que melhor se encaixa na sua situação. Caso tenha dúvidas, você pode ler a descrição detalhada de cada um deles na nossa página inicial.
+        </li>
+        <li style="margin-bottom: 12px;">
+            <strong style="color:#215892;">4. Data da Ocorrência:</strong> Informe o dia exato ou aproximado em que o fato aconteceu para nos ajudar a manter as estatísticas atualizadas.
+        </li>
+    </ul>
+
+</section>
 
         <section class="coluna-formulario">
             <h2 class="titulo-formulario">Cadastrar Golpe</h2>
@@ -56,10 +76,7 @@
                     </select>
                 </div>
 
-                <div class="campo-grupo">
-                    <label for="valor-perdido">Valor Perdido</label>
-                    <input type="text" id="valor-perdido" name="valor-perdido" placeholder="R$ 0,00" required>
-                </div>
+                
 
                 <div class="campo-grupo">
                     <label for="data-ocorrencia">Data da Ocorrência</label>
@@ -71,21 +88,6 @@
             </form>
         </section>
     </main>
-
-    <section id="estatisticas-relatos" class="container-cadastro" style="display: block; margin-top: 50px; padding: 0 40px;">
-        <h2 style="color: #0f3f72; font-size: 32px; margin-bottom: 10px;">Golpes Denunciados pela Comunidade</h2>
-        <p style="font-size: 20px; margin-bottom: 30px;">Veja abaixo quais são as fraudes mais comuns registradas no site.</p>
-
-        <div class="grafico-container" style="background: #fff; padding: 30px; border-radius: 12px; border: 2px solid #e1e8ed; margin-bottom: 4px;">
-            <h3 style="color: #0f3f72; margin-bottom: 20px;">Total de Registros por Tipo</h3>
-            <div id="grafico-barras"></div>
-        </div>
-
-        <div class="comentarios-container" style="background: #fff; padding: 30px; border-radius: 12px; border: 2px solid #e1e8ed; margin-top: 30px;">
-            <h3 style="color: #0f3f72; margin-bottom: 20px;">Relatos Recentes</h3>
-            <div id="lista-comentarios"></div>
-        </div>
-    </section>
 
     <script src="registro.js"></script>
 </body>

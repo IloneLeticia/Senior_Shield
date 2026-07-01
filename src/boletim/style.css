@@ -14,17 +14,20 @@ body {
   font-size: 20px; /* Fonte base consideravelmente maior para idosos */
 }
 
-/* ── NAVBAR (Limpo, Unificado e Ampliado) ── */
+/*------navbar------*/
+/*em tela grande fica na esquerda e direita e em telas menores centraliza*/
 .navbar {
   background: #1e72a7;
   padding: 0 40px;
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Empurra o logo para a esquerda e os links para a direita */
   min-height: 110px; 
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  flex-wrap: wrap; /* Segurança para telas menores */
 }
 
 .navbar-logo {
@@ -32,7 +35,6 @@ body {
   align-items: center;
   gap: 16px; 
   text-decoration: none; 
-  margin-right: auto;
 }
 
 .navbar-logo img { 
@@ -75,6 +77,43 @@ body {
   text-decoration: underline;
 }
 
+/* ── RESPONSIVIDADE (Abaixo de 900px) ── */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 15px 20px;
+    min-height: auto;
+    flex-direction: column; /* Empilha no celular para não esmagar os textos */
+    gap: 15px;
+    text-align: center;
+  }
+
+  .navbar-logo {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .navbar-logo img {
+    width: 65px; 
+    height: 65px;
+  }
+
+  .navbar-logo span {
+    font-size: 26px; 
+  }
+
+  .navbar-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 8px;
+  }
+
+  .navbar-links a {
+    font-size: 18px; 
+    padding: 8px 16px; 
+    white-space: normal; 
+  }
+}
 header h1 {
   /* MELHORIA: fonte maior no título */
   font-size: 40px;
